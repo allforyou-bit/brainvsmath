@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Printable Math Worksheet Generator (with Answer Keys) | Brain vs Math</title>
+<meta name="description" content="Generate free printable math worksheets in seconds: addition, subtraction, multiplication, division and mixed practice with answer keys. No signup, no watermark — pick a difficulty and print.">
+<link rel="canonical" href="https://allforyou-bit.github.io/brainvsmath/worksheets/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Free Printable Math Worksheet Generator">
+<meta property="og:description" content="Custom math worksheets with answer keys — free, instant, no signup.">
+<meta property="og:url" content="https://allforyou-bit.github.io/brainvsmath/worksheets/">
+<meta property="og:image" content="https://allforyou-bit.github.io/brainvsmath/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/worksheets.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are these math worksheets really free to print?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every worksheet is free, with no signup, no watermark and no download limit. Generate as many as you need for your classroom or home practice." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the worksheets include answer keys?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each worksheet includes an optional answer key that prints on a separate page, so you can hand out the problems and keep the answers." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I recreate the exact same worksheet later?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every worksheet has a code (seed). Use the Copy link button and the same worksheet — same problems, same order — can be reopened or shared with anyone." }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade levels do the worksheets cover?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Easy roughly matches grades 1-2 (single-digit facts), Medium grades 3-4 (times tables and two-digit work), and Hard grades 4-6 (multi-digit arithmetic and long division facts)." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="./" aria-current="page">Worksheets</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container" style="margin-top:1.4rem">
+
+  <section class="card no-print">
+    <div class="kicker">🖨️ Teacher &amp; parent favorite</div>
+    <h1 style="margin-bottom:.2rem">Math Worksheet Generator</h1>
+    <p class="muted">Free printable worksheets with answer keys. Pick your options, hit print. No signup, ever.</p>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="wsOp">Operation</label>
+        <select id="wsOp">
+          <option value="add">Addition</option>
+          <option value="sub">Subtraction</option>
+          <option value="mul" selected>Multiplication</option>
+          <option value="div">Division</option>
+          <option value="mix">Mixed practice</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="wsDiff">Difficulty</label>
+        <select id="wsDiff">
+          <option value="easy">Easy (grades 1-2)</option>
+          <option value="medium" selected>Medium (grades 3-4)</option>
+          <option value="hard">Hard (grades 4-6)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="wsCount">Problems</label>
+        <select id="wsCount">
+          <option value="20" selected>20</option>
+          <option value="36">36</option>
+          <option value="48">48</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="wsSeed">Worksheet code</label>
+        <input id="wsSeed" maxlength="10" spellcheck="false" autocomplete="off">
+      </div>
+    </div>
+
+    <label class="checkline"><input type="checkbox" id="wsHeader" checked> Name / Date header</label>
+    <label class="checkline"><input type="checkbox" id="wsAnswers" checked> Include answer key (prints on its own page)</label>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+      <button class="btn primary" id="wsGen">🎲 New worksheet</button>
+      <button class="btn" id="wsPrint">🖨️ Print</button>
+      <button class="btn ghost" id="wsLink">🔗 Copy link</button>
+    </div>
+  </section>
+
+  <section class="card ws-sheet" id="wsSheet" aria-label="Generated worksheet">
+    <!-- filled by JS -->
+  </section>
+
+  <section class="seo-block no-print">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Are these worksheets really free?</summary>
+        <p>Yes — free for classroom, tutoring and home use, with no signup, watermark or limit. Generate as many as you like.</p>
+      </details>
+      <details>
+        <summary>Do worksheets include answer keys?</summary>
+        <p>Yes. Keep "Include answer key" checked and the answers print on a separate final page, so you can hand out problems and keep the key.</p>
+      </details>
+      <details>
+        <summary>Can I share or re-print the exact same worksheet?</summary>
+        <p>Every worksheet has a code. "Copy link" gives you a URL that recreates the identical worksheet — handy for make-up work or parallel classes.</p>
+      </details>
+      <details>
+        <summary>Which grades is each difficulty for?</summary>
+        <p>Easy ≈ grades 1-2 (single-digit facts). Medium ≈ grades 3-4 (times tables, two-digit arithmetic). Hard ≈ grades 4-6 (multi-digit work and division facts).</p>
+      </details>
+    </div>
+    <p class="muted" style="margin-top:1.2rem">
+      Prefer practicing on screen? Try the <a href="../times-tables/">interactive times tables trainer</a>
+      or race the clock in <a href="../sprint/">Math Sprint</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

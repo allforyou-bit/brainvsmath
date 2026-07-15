@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Times Tables Chart 1-12 &amp; Practice Quiz (Free) | Brain vs Math</title>
+<meta name="description" content="Interactive multiplication chart from 1 to 12 with instant highlighting, per-table study lists and a quick-fire 10-question quiz. Free times tables practice for kids and adults.">
+<link rel="canonical" href="https://allforyou-bit.github.io/brainvsmath/times-tables/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Times Tables Chart 1-12 &amp; Practice Quiz">
+<meta property="og:description" content="Interactive multiplication chart plus a quick-fire quiz. Free, no signup.">
+<meta property="og:url" content="https://allforyou-bit.github.io/brainvsmath/times-tables/">
+<meta property="og:image" content="https://allforyou-bit.github.io/brainvsmath/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/tables.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What order should I learn times tables in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A proven order: 1, 2, 10, 5, 11, 4, 3, 6, 9, 8, 12, 7. Start with the patterns that feel easiest (2s double, 10s add a zero, 11s repeat the digit) and finish with 7s and 8s, which have the fewest shortcuts." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to memorize multiplication tables?",
+      "acceptedAnswer": { "@type": "Answer", "text": "With 5-10 minutes of daily practice, most learners master tables up to 12 in 4-8 weeks. Short, frequent quiz sessions beat long cramming — that is exactly what the quick-fire quiz on this page is for." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do times tables still matter if we have calculators?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Instant recall of multiplication facts frees working memory for harder steps like fractions, ratios, algebra and mental estimation. Students fluent in tables consistently find later math easier and faster." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="./" aria-current="page">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container" style="margin-top:1.4rem">
+
+  <section class="card">
+    <div class="kicker">✖️ Multiplication trainer</div>
+    <h1 style="margin-bottom:.2rem">Times Tables 1-12</h1>
+    <p class="muted">Tap any cell to light up its row and column. Tap a header to study that whole table.</p>
+
+    <div class="tt-grid-wrap">
+      <table class="tt-grid" id="ttGrid" aria-label="Multiplication chart 1 to 12"></table>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin-bottom:.2rem">Study one table</h2>
+    <p class="muted" style="margin-bottom:.4rem">Pick a table to list it out — say it aloud three times, then quiz yourself below.</p>
+    <div class="table-pick" id="tablePick"></div>
+    <div class="tt-list" id="ttList" aria-live="polite"></div>
+  </section>
+
+  <section class="card" id="quizCard">
+    <h2 style="margin-bottom:.2rem">Quick-fire quiz</h2>
+    <p class="muted">Ten questions. Type the answer and press Enter.</p>
+
+    <div id="quizSetup">
+      <div class="table-pick" id="quizPick"></div>
+      <button class="btn primary" id="quizStart">▶ Start quiz</button>
+    </div>
+
+    <div id="quizPlay" class="hidden">
+      <div class="timer-meta"><span id="quizProgress">Question 1/10</span><span>Score <strong id="quizScore">0</strong></span></div>
+      <div class="question" id="quizQ">7 × 8</div>
+      <div class="center">
+        <input id="quizInput" type="number" inputmode="numeric" autocomplete="off"
+               style="font-size:1.6rem;width:9rem;text-align:center;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:.45rem"
+               aria-label="Your answer">
+        <button class="btn primary" id="quizGo" style="vertical-align:top;margin-left:.4rem">✓</button>
+      </div>
+      <div class="feedback" id="quizFeedback" aria-live="polite"></div>
+    </div>
+
+    <div id="quizDone" class="hidden center">
+      <div class="bigscore" id="quizFinal">10/10</div>
+      <p class="muted" id="quizVerdict"></p>
+      <button class="btn primary" id="quizAgain">▶ Try again</button>
+    </div>
+  </section>
+
+  <section class="seo-block">
+    <h2>Tips for mastering the tables</h2>
+    <ul class="steps-list muted">
+      <li><strong>Learn the easy patterns first:</strong> 2s are doubles, 10s add a zero, 5s end in 0 or 5, 11s repeat the digit (11 × 4 = 44).</li>
+      <li><strong>9s trick:</strong> the digits of every 9-fact add to 9, and the tens digit is one less than the multiplier: 9 × 7 = 63.</li>
+      <li><strong>Use the swap:</strong> 8 × 3 is the same as 3 × 8 — knowing one direction halves the work.</li>
+      <li><strong>Square anchors:</strong> memorize 6×6, 7×7, 8×8 and step off them: 7 × 8 = 7×7 + 7 = 56.</li>
+      <li><strong>Little and often:</strong> a 10-question quiz daily beats an hour once a week. Come back tomorrow!</li>
+    </ul>
+    <p class="muted">
+      Ready for more? Print a <a href="../worksheets/">multiplication worksheet</a> for offline practice,
+      or race the clock in <a href="../sprint/">Math Sprint</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

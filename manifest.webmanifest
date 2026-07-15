@@ -1,0 +1,14 @@
+{
+  "name": "Brain vs Math — Daily Math Games",
+  "short_name": "BrainVsMath",
+  "description": "A free daily math puzzle with five tiers, a 60-second sprint, and printable worksheets.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

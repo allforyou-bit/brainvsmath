@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Percentage Calculator — % of, Percent Change &amp; Reverse Percent | Brain vs Math</title>
+<meta name="description" content="Free percentage calculator: find X% of a number, work out what percent X is of Y, and calculate percent increase or decrease — with every formula explained step by step.">
+<link rel="canonical" href="https://allforyou-bit.github.io/brainvsmath/percentage-calculator/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Percentage Calculator with formulas explained">
+<meta property="og:description" content="Three percentage tools with the math shown — free and instant.">
+<meta property="og:url" content="https://allforyou-bit.github.io/brainvsmath/percentage-calculator/">
+<meta property="og:image" content="https://allforyou-bit.github.io/brainvsmath/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/percent.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate a percentage of a number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Multiply the number by the percentage and divide by 100. For example, 15% of 80 is 80 × 15 ÷ 100 = 12. Mental shortcut: find 10% (move the decimal one place), then scale — 10% of 80 is 8, plus half of that (5% = 4) gives 12." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I work out what percent one number is of another?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Divide the part by the whole and multiply by 100. For example, 30 out of 120 is 30 ÷ 120 × 100 = 25%." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is percent change calculated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Percent change = (new − old) ÷ old × 100. Going from 50 to 65 is (65 − 50) ÷ 50 × 100 = +30%. A negative result means a decrease." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">％ Instant answers, formulas included</div>
+  <h1>Percentage Calculator</h1>
+  <p class="muted">Three tools, zero friction. Results update as you type — and we show the working, so you learn the trick too.</p>
+
+  <section class="card">
+    <h2 style="font-size:1.15rem">1 · What is X% of Y?</h2>
+    <div class="form-grid">
+      <div class="field"><label for="p1x">Percent (X%)</label><input id="p1x" type="number" inputmode="decimal" placeholder="15"></div>
+      <div class="field"><label for="p1y">Of number (Y)</label><input id="p1y" type="number" inputmode="decimal" placeholder="80"></div>
+    </div>
+    <div class="result-box">
+      <div class="big" id="p1r">—</div>
+      <div class="formula" id="p1f">Y × X ÷ 100</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 style="font-size:1.15rem">2 · X is what percent of Y?</h2>
+    <div class="form-grid">
+      <div class="field"><label for="p2x">Part (X)</label><input id="p2x" type="number" inputmode="decimal" placeholder="30"></div>
+      <div class="field"><label for="p2y">Whole (Y)</label><input id="p2y" type="number" inputmode="decimal" placeholder="120"></div>
+    </div>
+    <div class="result-box">
+      <div class="big" id="p2r">—</div>
+      <div class="formula" id="p2f">X ÷ Y × 100</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 style="font-size:1.15rem">3 · Percent change from X to Y</h2>
+    <div class="form-grid">
+      <div class="field"><label for="p3x">Old value (X)</label><input id="p3x" type="number" inputmode="decimal" placeholder="50"></div>
+      <div class="field"><label for="p3y">New value (Y)</label><input id="p3y" type="number" inputmode="decimal" placeholder="65"></div>
+    </div>
+    <div class="result-box">
+      <div class="big" id="p3r">—</div>
+      <div class="formula" id="p3f">(Y − X) ÷ X × 100</div>
+    </div>
+  </section>
+
+  <section class="seo-block">
+    <h2>The 10% shortcut everyone should know</h2>
+    <p class="muted">
+      Ten percent of any number is that number with the decimal point moved one place left:
+      10% of 340 is 34. From there you can build almost anything in your head —
+      5% is half of that (17), 20% is double (68), 15% is 10% + 5% (51), and 1% is 3.4.
+      Restaurant tip, sale discount, tax estimate: all just combinations of 10%, 5% and 1%.
+      Want this to become automatic? Two minutes a day on our <a href="../">daily puzzle</a>
+      or a <a href="../sprint/">60-second sprint</a> will do it.
+    </p>
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I calculate a percentage of a number?</summary>
+        <p>Multiply, then divide by 100: 15% of 80 = 80 × 15 ÷ 100 = 12. Or use the 10% shortcut: 10% is 8, 5% is 4, so 15% is 12.</p>
+      </details>
+      <details>
+        <summary>How do I find what percent X is of Y?</summary>
+        <p>Divide the part by the whole and multiply by 100: 30 out of 120 = 30 ÷ 120 × 100 = 25%.</p>
+      </details>
+      <details>
+        <summary>What's the percent change formula?</summary>
+        <p>(New − Old) ÷ Old × 100. From 50 to 65: (65 − 50) ÷ 50 × 100 = +30%. Negative results mean a decrease.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

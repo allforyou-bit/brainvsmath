@@ -1,0 +1,8 @@
+# internal business docs stay local (repo is public)
+docs/
+
+# local tooling
+.claude/
+*.local
+Thumbs.db
+Desktop.ini

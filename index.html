@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain vs Math — Daily Math Games &amp; Puzzles</title>
+<meta name="description" content="A free daily math puzzle: combine six numbers with + − × ÷ to hit the target. Five difficulty tiers, streaks and shareable results. New puzzle every day at midnight.">
+<link rel="canonical" href="https://allforyou-bit.github.io/brainvsmath/">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/img/icon-192.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Brain vs Math — Daily Math Games &amp; Puzzles">
+<meta property="og:description" content="Combine six numbers to hit the target. Five tiers, one new puzzle every day. Can you keep your streak alive?">
+<meta property="og:url" content="https://allforyou-bit.github.io/brainvsmath/">
+<meta property="og:image" content="https://allforyou-bit.github.io/brainvsmath/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="./assets/css/main.css">
+<script src="./config.js"></script>
+<script src="./assets/js/core.js" defer></script>
+<script src="./assets/js/target.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Brain vs Math",
+  "url": "https://allforyou-bit.github.io/brainvsmath/",
+  "description": "Free daily math games: a six-number target puzzle with five difficulty tiers, a 60-second mental math sprint, printable worksheets and practice tools."
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="./"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="./" aria-current="page">Daily</a>
+      <a href="./sprint/">Sprint</a>
+      <a href="./times-tables/">Times Tables</a>
+      <a href="./worksheets/">Worksheets</a>
+      <a href="./blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container" style="margin-top:1.4rem">
+
+  <section class="card game" aria-label="Daily Target puzzle">
+    <div class="game-top">
+      <div>
+        <div class="kicker" id="puzzleMeta">Daily Target</div>
+        <h1 style="margin-bottom:.15rem">Daily Target</h1>
+        <p class="muted" style="margin:0">Combine the six numbers to hit the target. Every op counts.</p>
+      </div>
+      <div class="game-actions">
+        <button class="icon-btn" data-open-modal="helpModal" aria-label="How to play">❓</button>
+        <button class="icon-btn" data-open-modal="statsModal" aria-label="Your statistics">📊</button>
+      </div>
+    </div>
+
+    <div class="tier-chips" id="tierChips" role="tablist" aria-label="Difficulty tiers"></div>
+
+    <div class="target-wrap">
+      <span class="target-label">Target</span>
+      <div class="target" id="targetNum">—</div>
+      <div class="muted" id="tierLabel" style="font-size:.85rem"></div>
+    </div>
+
+    <div class="tiles" id="tiles"></div>
+
+    <div class="ops" id="ops">
+      <button class="op" data-op="+" aria-label="Add">+</button>
+      <button class="op" data-op="−" aria-label="Subtract">−</button>
+      <button class="op" data-op="×" aria-label="Multiply">×</button>
+      <button class="op" data-op="÷" aria-label="Divide">÷</button>
+    </div>
+
+    <div class="controls">
+      <button class="btn small" id="undoBtn">↩ Undo</button>
+      <button class="btn small" id="resetBtn">⟲ Reset</button>
+      <button class="btn small" id="hintBtn">💡 Hint</button>
+    </div>
+
+    <div class="hint-line hidden" id="hintLine"></div>
+    <div class="solved-banner hidden" id="solvedBanner"></div>
+
+    <div class="daybar">
+      <div id="dayStatus" class="muted">Solve all five tiers to keep your streak. 🔥</div>
+      <button class="btn primary" id="shareBtn">📋 Share result</button>
+    </div>
+    <div class="countdown-line">Next puzzle in <strong id="countdown">--:--:--</strong></div>
+  </section>
+
+  <section class="seo-block" aria-label="More games and tools">
+    <h2>More brain workouts</h2>
+    <div class="cards-grid">
+      <a class="mini-card" href="./sprint/">
+        <span class="emoji">⚡</span>
+        <h3>Math Sprint</h3>
+        <p>How many can you solve in 60 seconds? Beat your best.</p>
+      </a>
+      <a class="mini-card" href="./times-tables/">
+        <span class="emoji">✖️</span>
+        <h3>Times Tables</h3>
+        <p>Interactive 12×12 chart with a quick-fire quiz.</p>
+      </a>
+      <a class="mini-card" href="./worksheets/">
+        <span class="emoji">🖨️</span>
+        <h3>Worksheet Generator</h3>
+        <p>Free printable math worksheets with answer keys.</p>
+      </a>
+      <a class="mini-card" href="./percentage-calculator/">
+        <span class="emoji">％</span>
+        <h3>Percentage Calculator</h3>
+        <p>Three percentage tools with the formulas explained.</p>
+      </a>
+      <a class="mini-card" href="./blog/">
+        <span class="emoji">🧠</span>
+        <h3>Mental Math Blog</h3>
+        <p>Tricks and techniques to calculate faster in your head.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="seo-block">
+    <h2>What is Daily Target?</h2>
+    <p class="muted">
+      Daily Target is a free daily numbers game inspired by classic arithmetic puzzles.
+      You get six numbers and one target. Combine the numbers using addition, subtraction,
+      multiplication and division — each result becomes a new number you can use — until you
+      hit the target exactly. There are five tiers each day, from Warm-up to Expert, and
+      everyone in the world gets the same puzzle. Come back tomorrow for a fresh one, keep
+      your streak alive, and share your star line with friends.
+    </p>
+    <h2 style="margin-top:1.6rem">How to play</h2>
+    <ol class="steps-list muted">
+      <li>Tap a number, tap an operation (+, −, ×, ÷), then tap a second number.</li>
+      <li>The two numbers merge into the result — division must be exact, and results stay positive.</li>
+      <li>Reach the target exactly to earn the tier's star. Use <em>Undo</em> freely.</li>
+      <li>Stuck? A hint reveals the first step (that tier's star turns into a half moon 🌗).</li>
+      <li>Solve at least one tier to extend your daily streak. Perfect days = all five, no hints.</li>
+    </ol>
+  </section>
+
+</main>
+
+<!-- How to play modal -->
+<div class="modal" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+  <div class="modal-box">
+    <h2 id="helpTitle">How to play <button class="modal-close" data-close-modal="helpModal" aria-label="Close">×</button></h2>
+    <p>Reach the <strong>target number</strong> by combining the six number tiles.</p>
+    <ol class="steps-list">
+      <li>Tap a number → tap an operation → tap another number.</li>
+      <li>They merge into a new tile you can keep using.</li>
+      <li>Hit the target exactly to solve the tier. ⭐</li>
+    </ol>
+    <p class="muted" style="font-size:.9rem">
+      Rules: division must divide evenly, and no step may go below 1.
+      Five tiers per day — Warm-up to Expert. Everyone gets the same puzzle.
+      A new one drops at midnight (your local time).
+    </p>
+    <button class="btn primary" data-close-modal="helpModal" style="width:100%">Let's play</button>
+  </div>
+</div>
+
+<!-- Stats modal -->
+<div class="modal" id="statsModal" role="dialog" aria-modal="true" aria-labelledby="statsTitle">
+  <div class="modal-box">
+    <h2 id="statsTitle">Your stats <button class="modal-close" data-close-modal="statsModal" aria-label="Close">×</button></h2>
+    <div class="stats-grid" id="statsGrid"></div>
+    <p class="muted" style="font-size:.85rem">Stats are stored only on this device (no account needed).</p>
+  </div>
+</div>
+
+<!-- Day complete modal -->
+<div class="modal" id="doneModal" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+  <div class="modal-box">
+    <h2 id="doneTitle"><span id="doneHeading">Brilliant! 🎉</span> <button class="modal-close" data-close-modal="doneModal" aria-label="Close">×</button></h2>
+    <p id="doneSub">You cleared today's board.</p>
+    <div class="share-preview" id="sharePreview"></div>
+    <button class="btn primary" id="shareBtn2" style="width:100%">📋 Share result</button>
+    <p class="muted center" style="margin:.8rem 0 0;font-size:.9rem">Next puzzle in <strong id="countdown2">--:--:--</strong></p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="./about/">About</a>
+      <a href="./privacy/">Privacy</a>
+      <a href="./terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

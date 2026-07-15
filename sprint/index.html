@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Sprint — 60-Second Mental Math Game | Brain vs Math</title>
+<meta name="description" content="How many math problems can you solve in 60 seconds? Free mental math sprint with adaptive difficulty, score streaks and personal bests. No signup, works on any device.">
+<link rel="canonical" href="https://allforyou-bit.github.io/brainvsmath/sprint/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Math Sprint — how many can you solve in 60 seconds?">
+<meta property="og:description" content="Adaptive 60-second mental math challenge. Beat your best score.">
+<meta property="og:url" content="https://allforyou-bit.github.io/brainvsmath/sprint/">
+<meta property="og:image" content="https://allforyou-bit.github.io/brainvsmath/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/sprint.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="./" aria-current="page">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container" style="margin-top:1.4rem">
+
+  <section class="card" aria-label="Math Sprint game">
+
+    <!-- start view -->
+    <div id="startView">
+      <div class="game-top">
+        <div>
+          <div class="kicker">⚡ Speed round</div>
+          <h1 style="margin-bottom:.15rem">Math Sprint</h1>
+          <p class="muted" style="margin:0">Solve as many as you can in 60 seconds. It gets harder as you go.</p>
+        </div>
+      </div>
+      <div class="statrow" style="margin-top:1.4rem">
+        <div class="stat"><b id="bestScore">0</b><span>Best score</span></div>
+        <div class="stat"><b id="bestSolved">0</b><span>Most solved</span></div>
+        <div class="stat"><b id="runsPlayed">0</b><span>Runs</span></div>
+      </div>
+      <div class="center" style="margin-top:1rem">
+        <button class="btn primary" id="startBtn" style="font-size:1.1rem;padding:.8rem 2.4rem">▶ Start sprint</button>
+      </div>
+      <p class="muted center" style="margin-top:1rem;font-size:.9rem">
+        Points scale with difficulty level. A streak of 5+ correct earns bonus points.
+      </p>
+    </div>
+
+    <!-- play view -->
+    <div id="playView" class="hidden">
+      <div class="timer-wrap">
+        <div class="timer-bar"><div class="timer-fill" id="timerFill"></div></div>
+        <div class="timer-meta">
+          <span id="timeLeft">60.0s</span>
+          <span>Score <strong id="scoreNow">0</strong> · Lv <strong id="levelNow">1</strong></span>
+        </div>
+      </div>
+      <div class="question" id="question">7 + 8</div>
+      <div class="answer-display" id="answerDisplay"><span class="placeholder">?</span></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+      <div class="keypad" id="keypad" aria-label="Number pad">
+        <button class="key" data-k="7">7</button>
+        <button class="key" data-k="8">8</button>
+        <button class="key" data-k="9">9</button>
+        <button class="key" data-k="4">4</button>
+        <button class="key" data-k="5">5</button>
+        <button class="key" data-k="6">6</button>
+        <button class="key" data-k="1">1</button>
+        <button class="key" data-k="2">2</button>
+        <button class="key" data-k="3">3</button>
+        <button class="key act" data-k="back">⌫</button>
+        <button class="key" data-k="0">0</button>
+        <button class="key ok" data-k="ok">✓</button>
+      </div>
+      <div class="center" style="margin-top:.8rem">
+        <button class="btn small ghost" id="skipBtn">Skip ▸</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="seo-block">
+    <h2>Why speed drills work</h2>
+    <p class="muted">
+      Mental math is a muscle: short, intense practice beats long, unfocused sessions.
+      Math Sprint uses adaptive difficulty — questions start friendly and climb toward
+      two-digit multiplication and exact division as you answer correctly. Sixty seconds
+      is short enough to play anywhere and long enough to leave your brain warmer than
+      a morning coffee. Play a round, then try today's <a href="../">Daily Target</a> puzzle,
+      or slow things down with our <a href="../times-tables/">times tables trainer</a>.
+    </p>
+  </section>
+
+</main>
+
+<!-- end-of-run modal -->
+<div class="modal" id="endModal" role="dialog" aria-modal="true" aria-labelledby="endTitle">
+  <div class="modal-box">
+    <h2 id="endTitle"><span id="endHeading">Time! ⏰</span> <button class="modal-close" data-close-modal="endModal" aria-label="Close">×</button></h2>
+    <div class="bigscore" id="finalScore">0</div>
+    <div class="statrow">
+      <div class="stat"><b id="finalSolved">0</b><span>Solved</span></div>
+      <div class="stat"><b id="finalAcc">0%</b><span>Accuracy</span></div>
+      <div class="stat"><b id="finalLevel">1</b><span>Top level</span></div>
+    </div>
+    <p class="center muted" id="bestNote" style="margin:.2rem 0 1rem"></p>
+    <div style="display:flex;gap:.6rem">
+      <button class="btn primary" id="shareRun" style="flex:1">📋 Share</button>
+      <button class="btn" id="againBtn" style="flex:1">▶ Play again</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
