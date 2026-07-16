@@ -11,5 +11,12 @@
 window.BVM_CONFIG = {
   siteUrl: "https://allforyou-bit.github.io/brainvsmath",
   adsenseClient: "",
-  cfAnalyticsToken: ""
+  cfAnalyticsToken: "",
+  /* Shop checkout links — paste the product URLs from your store
+     (Payhip/Gumroad/Ko-fi) and the buttons on /shop/ go live. */
+  shop: {
+    packUrl: "",
+    bookUrl: "",
+    kofiUrl: ""
+  }
 };

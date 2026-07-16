@@ -1,6 +1,9 @@
 # internal business docs stay local (repo is public)
 docs/
 
+# sellable products & marketing assets stay local (never publish sources of paid PDFs)
+PRODUCTS/
+
 # local tooling
 .claude/
 *.local
