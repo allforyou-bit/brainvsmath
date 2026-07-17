@@ -84,7 +84,7 @@ function New-Pin($fileName, $topLines, $midLines, $chips, $cta) {
 
   # footer site
   $f = New-Object System.Drawing.Font("Segoe UI", 24)
-  $site = "allforyou-bit.github.io/brainvsmath"
+  $site = "brainvsmath.com"
   $sw = $g.MeasureString($site, $f).Width
   $g.DrawString($site, $f, $greyBrush, (1000 - $sw) / 2, 1420)
 

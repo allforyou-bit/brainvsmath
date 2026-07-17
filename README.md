@@ -1,6 +1,6 @@
 # Brain vs Math 🧠⚡
 
-**[Play it live →](https://allforyou-bit.github.io/brainvsmath/)**
+**[Play it live →](https://brainvsmath.com/)**
 
 A free daily math playground:
 

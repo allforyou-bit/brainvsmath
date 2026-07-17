@@ -26,7 +26,7 @@ PINK = HexColor("#f472b6")
 CYAN = HexColor("#22d3ee")
 GREY = HexColor("#5b6b82")
 LIGHT = HexColor("#eef2f8")
-SITE = "allforyou-bit.github.io/brainvsmath"
+SITE = "brainvsmath.com"
 BRAND = "BRAIN vs MATH"
 
 MUL = "\xd7"   # × (WinAnsi-safe)

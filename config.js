@@ -9,7 +9,7 @@
    cfAnalyticsToken : Cloudflare Web Analytics token (free, cookieless). Optional.
    ============================================================ */
 window.BVM_CONFIG = {
-  siteUrl: "https://allforyou-bit.github.io/brainvsmath",
+  siteUrl: "https://brainvsmath.com",
   adsenseClient: "",
   cfAnalyticsToken: "",
   /* Shop checkout links — paste the product URLs from your store

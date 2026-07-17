@@ -7,7 +7,7 @@
 #
 # What it does (file transforms only - commit/push/DNS are listed
 # at the end as a checklist):
-#   1. Replaces https://allforyou-bit.github.io/brainvsmath -> https://<domain>
+#   1. Replaces https://brainvsmath.com -> https://<domain>
 #      across site files, tools and docs (canonicals, OG, sitemap,
 #      robots, config.js siteUrl, share URLs, tool SITE constants).
 #   2. Fixes 404.html absolute paths (/brainvsmath/ -> /).
@@ -19,8 +19,8 @@ param([Parameter(Mandatory = $true)][string]$Domain)
 
 $root = Split-Path $PSScriptRoot -Parent
 $enc = New-Object System.Text.UTF8Encoding($false)
-$oldFull = "https://allforyou-bit.github.io/brainvsmath"
-$oldBare = "allforyou-bit.github.io/brainvsmath"
+$oldFull = "https://brainvsmath.com"
+$oldBare = "brainvsmath.com"
 
 Write-Output "== 1/4 rewriting URLs to $Domain =="
 $files = Get-ChildItem $root -Recurse -File | Where-Object {
