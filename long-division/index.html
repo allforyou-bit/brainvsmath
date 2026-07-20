@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Long Division Practice &amp; Step-by-Step Solver (Free) | Brain vs Math</title>
+<meta name="description" content="Free long division practice: generate problems at three difficulty levels and reveal the full step-by-step worked solution — divide, multiply, subtract, bring down. No signup, printable.">
+<link rel="canonical" href="https://brainvsmath.com/long-division/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Long Division Practice &amp; Step-by-Step Solver">
+<meta property="og:description" content="Generate long division problems and see every step. Free, printable, no signup.">
+<meta property="og:url" content="https://brainvsmath.com/long-division/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/longdivision.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the steps of long division?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Long division repeats four steps: divide, multiply, subtract, and bring down. Divide the current number by the divisor to get a quotient digit, multiply it back, subtract to find the remainder, then bring down the next digit and repeat until no digits remain." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you write a remainder in long division?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If the divisor does not divide evenly, whatever is left after the last subtraction is the remainder. Write it after the quotient with an R, for example 47 divided by 5 is 9 R 2, because 9 x 5 = 45 and 47 - 45 = 2." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good way to practice long division?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Practice a few problems every day, starting with a single-digit divisor and no remainder, then adding remainders and two-digit divisors. Always check your answer by multiplying the quotient by the divisor and adding the remainder — it should equal the original number." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">➗ Divide, multiply, subtract, bring down</div>
+  <h1>Long Division Practice</h1>
+  <p class="muted">Generate a problem, try it yourself, then reveal the full worked solution — one step at a time. Great for grades 4–6.</p>
+
+  <section class="card no-print">
+    <div class="tier-chips" id="ldLevels" role="tablist" aria-label="Difficulty"></div>
+    <div class="ld-problem" id="ldProblem" aria-live="polite">— ÷ —</div>
+    <div class="controls" style="margin-top:.4rem">
+      <button class="btn primary" id="ldNew">🎲 New problem</button>
+      <button class="btn" id="ldReveal">👁 Show solution</button>
+      <button class="btn ghost" id="ldPrint">🖨️ Print a set of 12</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="ldSolutionCard">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Worked solution</h2>
+    <div class="ld-answer" id="ldAnswer"></div>
+    <ol class="steps-list muted" id="ldSteps" style="font-variant-numeric:tabular-nums;margin-top:.6rem"></ol>
+    <p class="muted" style="font-size:.85rem;margin-top:.6rem" id="ldCheck"></p>
+  </section>
+
+  <!-- printable set -->
+  <section class="card ws-sheet hidden" id="ldSheet" aria-label="Printable long division set"></section>
+
+  <section class="seo-block no-print">
+    <h2>The four steps, every time</h2>
+    <p class="muted">
+      Long division looks intimidating but it is just one short loop repeated: <strong>Divide, Multiply,
+      Subtract, Bring down</strong> (some remember it as "Does McDonald's Sell Burgers?"). You work left to
+      right across the dividend, and each pass produces one digit of the answer.
+    </p>
+    <ol class="steps-list muted">
+      <li><strong>Divide:</strong> how many times does the divisor fit into the current number?</li>
+      <li><strong>Multiply:</strong> that quotient digit × the divisor.</li>
+      <li><strong>Subtract:</strong> take it away to find what's left.</li>
+      <li><strong>Bring down:</strong> pull down the next digit and repeat. Whatever remains at the end is the remainder.</li>
+    </ol>
+    <p class="muted"><strong>Always check:</strong> quotient × divisor + remainder should equal the number you started with.</p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>What are the steps of long division?</summary><p>Divide, multiply, subtract, bring down — repeated until no digits are left. Anything remaining is the remainder.</p></details>
+      <details><summary>How do I write a remainder?</summary><p>After the last subtraction, write what's left with an R: 47 ÷ 5 = 9 R 2 (9×5 = 45, 47−45 = 2).</p></details>
+      <details><summary>How should I practice?</summary><p>A few a day, easy → hard. Check each answer by multiplying back. This page gives you unlimited fresh problems and a printable set of 12.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../fraction-calculator/">fraction calculator</a> ·
+      <a href="../times-tables/">times tables</a> ·
+      <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

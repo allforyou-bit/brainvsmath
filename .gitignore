@@ -9,3 +9,6 @@ PRODUCTS/
 *.local
 Thumbs.db
 Desktop.ini
+
+# stray local scratch files (keep autonomous commits clean)
+10분

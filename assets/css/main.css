@@ -356,6 +356,17 @@ button { font-family: inherit; }
 .frac-result .res-meta { color: var(--muted); font-size: .8rem; }
 @media (max-width: 460px) { .frac-ops { flex-direction: row; } .frac-eq { display: none; } }
 
+/* ---------- long division ---------- */
+.ld-problem {
+  text-align: center; font-size: clamp(2.2rem, 8vw, 3rem); font-weight: 800;
+  letter-spacing: .02em; margin: 1rem 0; font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, var(--pink), var(--cyan));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.ld-answer { display: flex; align-items: baseline; justify-content: center; gap: .5rem; flex-wrap: wrap; }
+.ld-answer .ld-eqlabel { color: var(--muted); font-size: 1rem; font-variant-numeric: tabular-nums; }
+.ld-answer .ld-quotient { font-size: clamp(1.6rem, 6vw, 2.2rem); font-weight: 800; color: var(--cyan); font-variant-numeric: tabular-nums; }
+
 /* ---------- times tables ---------- */
 .tt-grid-wrap { overflow-x: auto; margin-top: 1rem; }
 .tt-grid { border-collapse: collapse; margin-inline: auto; font-variant-numeric: tabular-nums; }
