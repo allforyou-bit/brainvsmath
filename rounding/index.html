@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rounding Practice: Round to Nearest 10, 100, 1000 (Free) | Brain vs Math</title>
+<meta name="description" content="Free rounding practice generator: round numbers to the nearest ten, hundred or thousand and reveal a clear step-by-step explanation. Unlimited problems, printable set of 12, no signup.">
+<link rel="canonical" href="https://brainvsmath.com/rounding/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Rounding Practice — Nearest 10, 100, 1000">
+<meta property="og:description" content="Round numbers to the nearest ten, hundred or thousand with step-by-step help. Free, printable, no signup.">
+<meta property="og:url" content="https://brainvsmath.com/rounding/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/rounding.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you round a number to the nearest ten, hundred or thousand?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Find the digit in the place you are rounding to, then look at the single digit immediately to its right. If that digit is 5 or more, round up by adding one to the rounding digit; if it is 4 or less, round down and leave the rounding digit unchanged. Finally, replace every digit to the right with zeros." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you round up on 5?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The most common school rule is round-half-up: a 5 in the deciding position rounds up. For example, 250 rounded to the nearest hundred is 300, and 45 rounded to the nearest ten is 50." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is 3847 rounded to the nearest hundred?",
+      "acceptedAnswer": { "@type": "Answer", "text": "3800. The hundreds digit is 8 and the digit to its right (the tens place) is 4. Since 4 is less than 5, you round down, keep the 8, and set the tens and ones to zero, giving 3800." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">🎯 Nearest ten, hundred or thousand</div>
+  <h1>Rounding Practice</h1>
+  <p class="muted">Pick a place value, generate a number, try it yourself, then reveal the step-by-step reasoning. Great for grades 3–5.</p>
+
+  <section class="card no-print">
+    <div class="tier-chips" id="rdLevels" role="tablist" aria-label="Rounding place"></div>
+    <div class="ld-problem" id="rdProblem" aria-live="polite">—</div>
+    <div class="controls" style="margin-top:.4rem">
+      <button class="btn primary" id="rdNew">🎲 New number</button>
+      <button class="btn" id="rdReveal">👁 Show steps</button>
+      <button class="btn ghost" id="rdPrint">🖨️ Print a set of 12</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="rdSolutionCard">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Rounded answer</h2>
+    <div class="ld-answer" id="rdAnswer"></div>
+    <ol class="steps-list muted" id="rdSteps" style="font-variant-numeric:tabular-nums;margin-top:.6rem"></ol>
+  </section>
+
+  <!-- printable set -->
+  <section class="card ws-sheet hidden" id="rdSheet" aria-label="Printable rounding set"></section>
+
+  <section class="seo-block no-print">
+    <h2>The one rule for rounding</h2>
+    <p class="muted">
+      Rounding always comes down to a single decision. Find the digit in the place you are rounding to
+      — the <strong>tens</strong>, <strong>hundreds</strong> or <strong>thousands</strong> — then look at the
+      one digit immediately to its <strong>right</strong>. That neighbour decides everything:
+    </p>
+    <ol class="steps-list muted">
+      <li><strong>Find</strong> the digit in the rounding place.</li>
+      <li><strong>Peek right</strong> at the single digit next to it.</li>
+      <li><strong>5 or more → round up</strong> (add one to the rounding digit). <strong>4 or less → round down</strong> (leave it alone).</li>
+      <li><strong>Zero out</strong> every digit to the right. Done.</li>
+    </ol>
+    <p class="muted"><strong>Example:</strong> 3,847 to the nearest hundred → the hundreds digit is 8, the tens digit is 4, and 4 &lt; 5, so we round down: <strong>3,800</strong>.</p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How do I round to the nearest ten, hundred or thousand?</summary><p>Look at the single digit to the right of the place you're rounding to. 5 or more rounds up, 4 or less rounds down, then set everything to the right to zero.</p></details>
+      <details><summary>Do you round up on a 5?</summary><p>Yes — the standard school rule is round-half-up, so a 5 in the deciding spot rounds up. 250 → 300 to the nearest hundred; 45 → 50 to the nearest ten.</p></details>
+      <details><summary>How should I practice?</summary><p>Start with the nearest ten, then work up to hundreds and thousands. This page gives unlimited fresh numbers and a printable set of 12 with an answer key.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../long-division/">long division</a> ·
+      <a href="../fraction-calculator/">fraction calculator</a> ·
+      <a href="../times-tables/">times tables</a> ·
+      <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

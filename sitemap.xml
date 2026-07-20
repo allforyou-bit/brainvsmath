@@ -43,6 +43,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://brainvsmath.com/rounding/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://brainvsmath.com/shop/</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
