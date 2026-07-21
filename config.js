@@ -18,5 +18,16 @@ window.BVM_CONFIG = {
     packUrl: "",
     bookUrl: "",
     kofiUrl: ""
+  },
+  /* Email capture (MailerLite). Both IDs are PUBLIC embed identifiers,
+     not secrets. Create an embedded form in MailerLite, then paste:
+       mlAccount : your account id (digits, e.g. "2520403")
+       mlForm    : the form code (e.g. "a1b2C3")
+     When both are set, the styled signup form on /free-multiplication-pack/
+     goes live and captures emails. Until then, the page still gives the
+     free download so it's useful immediately. */
+  email: {
+    mlAccount: "",
+    mlForm: ""
   }
 };
