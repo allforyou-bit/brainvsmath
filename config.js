@@ -27,7 +27,7 @@ window.BVM_CONFIG = {
      goes live and captures emails. Until then, the page still gives the
      free download so it's useful immediately. */
   email: {
-    mlAccount: "",
-    mlForm: ""
+    mlAccount: "2520403",
+    mlForm: "Qn3oRk"
   }
 };
