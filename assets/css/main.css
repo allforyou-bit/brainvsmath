@@ -356,6 +356,20 @@ button { font-family: inherit; }
 .frac-result .res-meta { color: var(--muted); font-size: .8rem; }
 @media (max-width: 460px) { .frac-ops { flex-direction: row; } .frac-eq { display: none; } }
 
+/* ---------- GPA calculator ---------- */
+.gpa-row { display: grid; grid-template-columns: 1fr 6.5rem 4.5rem 2rem; gap: .5rem; align-items: center; margin-bottom: .5rem; }
+.gpa-row input, .gpa-row select {
+  background: var(--surface2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 9px; padding: .5rem .55rem; font-size: .95rem; font-family: inherit; width: 100%;
+}
+.gpa-row .gpa-credits { text-align: center; }
+.gpa-del { border: 1px solid var(--border); color: var(--muted); padding: .35rem .5rem; }
+.gpa-del:hover { color: var(--red); border-color: var(--red); }
+@media (max-width: 460px) {
+  .gpa-row { grid-template-columns: 1fr 5rem 3.6rem 1.8rem; gap: .35rem; }
+  .gpa-row input, .gpa-row select { padding: .45rem .35rem; font-size: .88rem; }
+}
+
 /* ---------- long division ---------- */
 .ld-problem {
   text-align: center; font-size: clamp(2.2rem, 8vw, 3rem); font-weight: 800;
