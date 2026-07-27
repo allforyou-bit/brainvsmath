@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six Numbers, One Target: A Strategy Guide | Brain vs Math</title>
+<meta name="description" content="How to solve six-number target puzzles: read the target first, build the nearest multiple, factor it, make round numbers and use exact division. Four worked examples and a tier-by-tier guide.">
+<link rel="canonical" href="https://brainvsmath.com/blog/six-numbers-one-target-strategy/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Six Numbers, One Target: A Strategy Guide">
+<meta property="og:description" content="The four techniques that solve almost every six-number target puzzle — with worked examples and a tier-by-tier guide.">
+<meta property="og:url" content="https://brainvsmath.com/blog/six-numbers-one-target-strategy/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../../assets/css/main.css">
+<script src="../../config.js"></script>
+<script src="../../assets/js/core.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Six Numbers, One Target: A Strategy Guide",
+  "datePublished": "2026-07-27",
+  "dateModified": "2026-07-27",
+  "author": { "@type": "Organization", "name": "Brain vs Math" },
+  "publisher": { "@type": "Organization", "name": "Brain vs Math" },
+  "mainEntityOfPage": "https://brainvsmath.com/blog/six-numbers-one-target-strategy/"
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../../">Daily</a>
+      <a href="../../sprint/">Sprint</a>
+      <a href="../../times-tables/">Times Tables</a>
+      <a href="../../worksheets/">Worksheets</a>
+      <a href="../../shop/">Shop</a>
+      <a href="../" aria-current="page">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow prose" style="margin-top:1.4rem">
+
+  <h1>Six Numbers, One Target: A Strategy Guide</h1>
+  <p class="post-meta">July 27, 2026 · 7 min read · Brain vs Math</p>
+
+  <p>
+    Six numbers, one three-digit target, four operations. It looks like a puzzle you either see or you
+    don't — but it isn't. Strong solvers aren't calculating faster than you; they're running a short
+    checklist, in order, and most targets fall to the first or second item on it.
+  </p>
+  <p>
+    This guide is that checklist. It's written for the <a href="../../">Daily Target</a> puzzle on this
+    site — five tiers every day, from a two-move warm-up to a five-move expert board — but the techniques
+    work on any six-number target game.
+  </p>
+
+  <h2>The four rules that actually shape play</h2>
+  <p>
+    Before strategy, the constraints. These are what make some ideas work and others dead-end:
+  </p>
+  <ul>
+    <li><strong>Numbers are consumed.</strong> Combine two tiles and they're gone, replaced by the result. You get six numbers and each is used at most once.</li>
+    <li><strong>You don't have to use them all.</strong> Hitting the target is the only goal. Most solutions leave one or two tiles untouched.</li>
+    <li><strong>Division must be exact.</strong> 20 ÷ 4 is fine; 20 ÷ 3 is rejected. No fractions ever appear.</li>
+    <li><strong>Results must stay at 1 or above.</strong> No negative numbers, no zero — so subtraction is always larger minus smaller.</li>
+  </ul>
+  <p>
+    One more thing worth knowing: every board is <em>generated from a solution</em>, so a path always
+    exists. If you're stuck, you're missing a route — not fighting an impossible board.
+  </p>
+
+  <h2>Read the target before you touch a tile</h2>
+  <p>
+    The single biggest improvement most players make is to stop grabbing numbers and spend five seconds on
+    the target itself. Ask three questions:
+  </p>
+  <ol>
+    <li><strong>What's it near?</strong> 743 is 700 + 43. 336 is 350 − 14. Round anchors are easy to build.</li>
+    <li><strong>What divides it?</strong> If the target is even, or ends in 0 or 5, a multiplication route is likely.</li>
+    <li><strong>What's on the board?</strong> A 25, 50, 75 or 100 tile almost always belongs in the big multiplication that gets you close.</li>
+  </ol>
+  <p>
+    Then pick your route. The four techniques below cover the overwhelming majority of boards.
+  </p>
+
+  <h2>Technique 1 — Build the nearest multiple, then adjust</h2>
+  <p>
+    This is the workhorse. Find a product that lands near the target using a big tile, then patch the gap
+    with the leftovers. Nearly every hard board yields to it.
+  </p>
+  <div class="example">
+    <b>Board:</b> 2, 4, 7, 18, 27, 100 &nbsp;·&nbsp; <b>Target:</b> 743<br>
+    7 × 100 = 700 — that's the anchor, and the gap is 43.<br>
+    18 + 27 = 45 → 45 − 2 = 43 → 700 + 43 = <b>743</b>.
+  </div>
+  <p>
+    Notice the order of thought: the anchor came first, the gap second. Beginners try to build 743 from the
+    bottom up and drown in options. The gap is almost always small, and small numbers are easy to make.
+  </p>
+
+  <h2>Technique 2 — Factor the target</h2>
+  <p>
+    When the target is comfortably composite, skip addition entirely. Break it into factors and check
+    whether the board can supply them.
+  </p>
+  <div class="example">
+    <b>Board:</b> 4, 6, 7, 8, 21, 32 &nbsp;·&nbsp; <b>Target:</b> 336<br>
+    336 = 8 × 42 = 8 × 6 × 7, and all three are sitting right there.<br>
+    8 × 6 = 48 → 48 × 7 = <b>336</b>. Two moves on a three-move board.
+  </div>
+  <p>
+    This is why factor sense pays off directly in play. If you want to train the instinct, the
+    <a href="../../prime-number-checker/">prime factorization tool</a> shows the full breakdown of any
+    number — run a few three-digit targets through it and you'll start seeing 336 as 2⁴ × 3 × 7 rather
+    than as "three hundred and something."
+  </p>
+  <p>
+    A quick tell: if the target is <strong>prime</strong>, no pure multiplication route exists, so stop
+    looking for one and go straight to Technique 1.
+  </p>
+
+  <h2>Technique 3 — Build a round number, then take a bite</h2>
+  <p>
+    Multiplying up to a clean 150, 200 or 300 and subtracting is often shorter than adding your way up.
+    Subtraction is under-used by most players — it's frequently the fastest move on the board.
+  </p>
+  <div class="example">
+    <b>Board:</b> 3, 4, 6, 12, 25, 38 &nbsp;·&nbsp; <b>Target:</b> 138<br>
+    138 is awkward. But 150 is easy, and 150 − 12 = 138.<br>
+    6 × 25 = 150 → 150 − 12 = <b>138</b>.
+  </div>
+  <p>
+    The habit here is the same "round and adjust" move that makes mental subtraction fast in daily life;
+    the <a href="../../rounding/">rounding trainer</a> drills exactly this reflex.
+  </p>
+
+  <h2>Technique 4 — Division makes the number you don't have</h2>
+  <p>
+    Division rarely shrinks the target. Its real job is to <em>manufacture a missing tile</em> — usually a
+    small one you need for a multiplication.
+  </p>
+  <div class="example">
+    <b>Board:</b> 2, 3, 8, 9, 12, 20 &nbsp;·&nbsp; <b>Target:</b> 45<br>
+    45 = 9 × 5, and there's a 9 — but no 5 anywhere.<br>
+    12 − 8 = 4 → 20 ÷ 4 = 5 → 9 × 5 = <b>45</b>.
+  </div>
+  <p>
+    So when a promising factorization is missing exactly one number, don't abandon it. Ask what pair on the
+    board divides into the number you need.
+  </p>
+
+  <h2>Tier by tier</h2>
+  <p>
+    The five daily tiers aren't just "bigger numbers" — the mix of tiles changes, and so does the technique
+    that works best.
+  </p>
+  <ul>
+    <li><strong>Warm-up (2 moves)</strong> — six single digits. Almost always one multiplication plus one adjustment. Don't overthink it.</li>
+    <li><strong>Easy (3 moves)</strong> — four small tiles plus two in the teens. The teens are your multipliers; Technique 4 shows up here often.</li>
+    <li><strong>Medium (3 moves)</strong> — four mid-size tiles plus two larger ones. Targets are big enough that factoring (Technique 2) starts to pay.</li>
+    <li><strong>Hard (4 moves)</strong> — now one of 25/50/75/100 appears. That tile is your anchor almost every time. Technique 1, then patch.</li>
+    <li><strong>Expert (5 moves)</strong> — <em>two</em> big tiles. Look for a product of the two large tiles or a large × small that overshoots slightly, then subtract your way down.</li>
+  </ul>
+  <p>
+    Each board shows its <strong>par</strong> — the number of moves the generator used. Par is a ceiling,
+    not a requirement: beating it, as in Technique 2 above, is common and satisfying.
+  </p>
+
+  <h2>When you're stuck</h2>
+  <p>
+    A practical order of operations:
+  </p>
+  <ol>
+    <li><strong>Undo one move</strong> and try a different second step. Most dead ends are one bad branch, not a bad plan.</li>
+    <li><strong>Reset and re-read the target.</strong> If you started with addition, try a factorization. If you tried factoring, find the anchor product instead.</li>
+    <li><strong>Check the parity.</strong> An odd target can't come from an even product alone — somewhere you need an odd multiplier or an adjustment.</li>
+    <li><strong>Take the hint last.</strong> It reveals the opening move, and the tier is marked 🌗 instead of ⭐. A clean five-tier day is worth protecting.</li>
+  </ol>
+
+  <h2>How to actually get better at this</h2>
+  <p>
+    Target puzzles reward two separate skills, and they're both trainable:
+  </p>
+  <ul>
+    <li><strong>Instant multiplication recall</strong> — so options appear without effort. A daily pass on the <a href="../../times-tables/">times tables trainer</a> does it.</li>
+    <li><strong>Fast approximation</strong> — knowing that 7 × 100 lands near 743 before you compute anything. A 60-second <a href="../../sprint/">Math Sprint</a> builds it, and the <a href="../mental-math-4-week-plan/">four-week plan</a> lays out a full routine.</li>
+  </ul>
+  <p>
+    Then play. Five tiers a day, five minutes, and the checklist becomes automatic — you stop searching and
+    start seeing. <a href="../../">Today's board</a> is waiting.
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../../about/">About</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

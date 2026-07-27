@@ -74,9 +74,15 @@
   </url>
   <url>
     <loc>https://brainvsmath.com/blog/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://brainvsmath.com/blog/six-numbers-one-target-strategy/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://brainvsmath.com/blog/mental-math-4-week-plan/</loc>
