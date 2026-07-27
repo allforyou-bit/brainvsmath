@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prime Number Checker &amp; Factorization Calculator (Free) | Brain vs Math</title>
+<meta name="description" content="Free prime number checker: test if any number up to a trillion is prime, see its prime factorization, all its divisors and the nearest primes — with the reasoning shown. Includes a printable prime chart.">
+<link rel="canonical" href="https://brainvsmath.com/prime-number-checker/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Prime Number Checker &amp; Factorization">
+<meta property="og:description" content="Is it prime? Test any number, see its prime factorization and every divisor. Free, no signup.">
+<meta property="og:url" content="https://brainvsmath.com/prime-number-checker/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/prime.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a prime number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A prime number is a whole number greater than 1 that has exactly two divisors: 1 and itself. 7 is prime because nothing except 1 and 7 divides it evenly, while 9 is not prime because 3 divides it. Numbers with more than two divisors are called composite." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you check if a number is prime?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Try dividing the number by every whole number from 2 up to its square root. If none divides it without a remainder, the number is prime. You only need to test up to the square root because any divisor larger than it must pair with a smaller one you have already tested." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is 1 a prime number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. A prime must have exactly two distinct divisors, and 1 has only one. Excluding 1 also keeps prime factorization unique: without that rule, 6 could be written as 2 x 3, 1 x 2 x 3, 1 x 1 x 2 x 3 and so on." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is prime factorization?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Prime factorization breaks a number into the primes that multiply together to make it, such as 360 = 2^3 x 3^2 x 5. Every whole number above 1 has exactly one prime factorization, which is why it is used to simplify fractions and to find greatest common divisors." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the largest prime number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There is no largest prime. Euclid proved over two thousand years ago that primes never run out: multiply any finite list of primes together, add 1, and the result has a prime divisor that is not on the list." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">🔢 Prime test · factorization · divisors</div>
+  <h1>Prime Number Checker</h1>
+  <p class="muted">Type any whole number up to a trillion. You get a yes-or-no answer, the prime factorization, every divisor and the reasoning behind it — no signup, nothing sent anywhere.</p>
+
+  <section class="card no-print">
+    <div class="pc-form">
+      <input id="pcInput" type="text" inputmode="numeric" class="pc-input" value="97" aria-label="Number to test for primality" autocomplete="off" spellcheck="false">
+      <button class="btn primary" id="pcCheck">Check</button>
+      <button class="btn" id="pcRandom">🎲 Random</button>
+    </div>
+    <div class="tier-chips" style="margin-top:.7rem" aria-label="Example numbers">
+      <button class="chip" data-example="97">97</button>
+      <button class="chip" data-example="360">360</button>
+      <button class="chip" data-example="561">561</button>
+      <button class="chip" data-example="1729">1729</button>
+      <button class="chip" data-example="8191">8191</button>
+      <button class="chip" data-example="1000003">1,000,003</button>
+      <button class="chip" data-example="2147483647">2,147,483,647</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="pcResult" aria-live="polite">
+    <div class="pc-verdict" id="pcVerdict">—</div>
+    <div id="pcDetail">
+      <div class="pc-factor-line" id="pcFactorLine"></div>
+      <div class="pc-facts" id="pcFacts"></div>
+      <ol class="steps-list muted" id="pcSteps" style="margin-top:.9rem"></ol>
+      <div id="pcDivisorsWrap" class="hidden">
+        <h2 style="font-size:1rem;margin:1rem 0 .4rem">All divisors</h2>
+        <div class="pc-divisors" id="pcDivisors"></div>
+        <p class="muted" id="pcDivisorsNote" style="font-size:.8rem;margin:.5rem 0 0"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Primes from 1 to 100</h2>
+    <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">The 25 highlighted numbers are prime. Tap any square to run it through the checker.</p>
+    <div class="pc-chart" id="pcChart" aria-label="Numbers 1 to 100 with primes highlighted"></div>
+    <div class="controls" style="margin-top:.9rem">
+      <button class="btn ghost" id="pcPrint">🖨️ Print a prime chart to 200</button>
+    </div>
+  </section>
+
+  <!-- printable sheet -->
+  <section class="card ws-sheet hidden" id="pcSheet" aria-label="Printable prime chart"></section>
+
+  <section class="seo-block no-print">
+    <h2>What makes a number prime</h2>
+    <p class="muted">
+      A <strong>prime number</strong> is a whole number above 1 with exactly two divisors: 1 and itself.
+      Everything else above 1 is <strong>composite</strong> — it can be built by multiplying smaller numbers.
+      That single rule turns out to be the backbone of arithmetic: every whole number above 1 factors into
+      primes in exactly one way, which is why primes are called the atoms of the number system.
+    </p>
+
+    <h2 style="margin-top:1.6rem">How to test a number by hand</h2>
+    <ol class="steps-list muted">
+      <li><strong>Stop at the square root.</strong> To test 97, you only need divisors up to √97 ≈ 9.8. Anything bigger would have to pair with something smaller you already checked.</li>
+      <li><strong>Rule out the easy ones.</strong> Even numbers (except 2) fail immediately. If the digits add to a multiple of 3, it is divisible by 3. If it ends in 0 or 5, it is divisible by 5.</li>
+      <li><strong>Test the primes that are left.</strong> For 97 that means 7 only — and 97 ÷ 7 leaves a remainder, so 97 is prime.</li>
+    </ol>
+    <p class="muted">
+      This checker does exactly that, just faster: it walks the candidates 2, 3, then every number of the form
+      6k ± 1 up to the square root, because every prime above 3 has that shape.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Why prime factorization is worth knowing</h2>
+    <p class="muted">
+      Once a number is broken into primes, several school problems become mechanical.
+      Simplifying a fraction is cancelling shared primes. The greatest common divisor is the primes two numbers
+      share, and the least common multiple is every prime at its highest power. Even the count of divisors falls
+      out of the exponents: 360 = 2³ × 3² × 5 has (3+1) × (2+1) × (1+1) = 24 divisors, without listing one of them.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>What is a prime number?</summary><p>A whole number above 1 whose only divisors are 1 and itself. 7 is prime; 9 is not, because 3 divides it.</p></details>
+      <details><summary>Is 1 a prime number?</summary><p>No. A prime needs exactly two distinct divisors and 1 has only one. Excluding it is also what makes prime factorization unique.</p></details>
+      <details><summary>Is 2 prime?</summary><p>Yes — and it is the only even prime. Every other even number has 2 as a third divisor.</p></details>
+      <details><summary>How many primes are there under 100?</summary><p>25: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97. The chart above highlights them.</p></details>
+      <details><summary>Do primes ever run out?</summary><p>No. Euclid's proof: multiply any finite list of primes and add 1 — the result has a prime divisor missing from your list, so no list is ever complete.</p></details>
+      <details><summary>How big a number can this handle?</summary><p>Up to 1,000,000,000,000 (10¹²). Beyond that, honest trial division gets too slow to run comfortably in a browser.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../fraction-calculator/">fraction calculator</a> ·
+      <a href="../long-division/">long division</a> ·
+      <a href="../rounding/">rounding practice</a> ·
+      <a href="../times-tables/">times tables</a> ·
+      <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

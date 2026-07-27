@@ -98,3 +98,5 @@ New-Pin "pin-free-generator.png" @("FREE Math", "Worksheet", "Generator") @("Ans
 New-Pin "pin-mastery-pack.png" @("60 No-Prep", "Multiplication", "Worksheets") @("Tables 2-12 + mixed practice + speed drills", "Full answer keys - grades 3-5 - instant PDF") @("7$mul8", "56") "Get the pack"
 New-Pin "pin-puzzle-book.png" @("100 Number", "Puzzles") @("Reach the target with six numbers", "Warm-up to Expert - solutions included") @("75", "8", "3") "Get the book"
 New-Pin "pin-daily-game.png" @("A New Math", "Puzzle Every", "Day") @("Free browser game - keep your streak alive", "5 difficulty tiers, from Warm-up to Expert") @("25", "+", "50") "Play free today"
+New-Pin "pin-prime-checker.png" @("Is It Prime?", "Find Out Fast") @("Prime factorization + every divisor, explained", "Free checker - no signup - works to a trillion") @("2", "3", "5", "7") "Check any number"
+New-Pin "pin-prime-chart.png" @("Prime Numbers", "Chart to 200") @("Printable reference for grades 4-7", "46 primes circled + the full list") @("11", "13", "17") "Print it free"

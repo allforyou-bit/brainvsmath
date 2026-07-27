@@ -478,6 +478,44 @@ button { font-family: inherit; }
 .stats-grid b { display: block; font-size: 1.6rem; }
 .stats-grid span { color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; }
 
+/* ---------- prime number checker ---------- */
+.pc-form { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.pc-input {
+  flex: 1 1 12rem; min-width: 0; background: var(--surface2); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: .6rem .75rem; font: 700 1.25rem/1.2 var(--mono);
+  font-variant-numeric: tabular-nums; text-align: center;
+}
+.pc-input:focus { outline: 2px solid var(--cyan); outline-offset: 1px; }
+.pc-verdict {
+  text-align: center; font-size: clamp(1.25rem, 5vw, 1.75rem); font-weight: 800;
+  font-variant-numeric: tabular-nums; color: var(--muted); word-break: break-word;
+}
+.pc-verdict.yes { color: var(--green); }
+.pc-verdict.no { color: var(--gold); }
+.pc-factor-line {
+  text-align: center; margin-top: .5rem; font-family: var(--mono);
+  font-size: clamp(.95rem, 3.4vw, 1.2rem); color: var(--cyan); word-break: break-word;
+}
+.pc-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); gap: .5rem; margin-top: 1rem; }
+.pc-fact { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .5rem .6rem; text-align: center; }
+.pc-fact .k { display: block; color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; }
+.pc-fact .v { display: block; font-weight: 800; font-variant-numeric: tabular-nums; margin-top: .15rem; }
+.pc-divisors { display: flex; flex-wrap: wrap; gap: .3rem; }
+.pc-div {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 999px;
+  padding: .15rem .55rem; font-size: .82rem; font-variant-numeric: tabular-nums; color: var(--muted);
+}
+.pc-div.p { color: var(--cyan); border-color: var(--cyan); }
+.pc-chart { display: grid; grid-template-columns: repeat(10, 1fr); gap: .25rem; }
+.pc-cell {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
+  background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  color: var(--muted); font: 600 .78rem/1 var(--font); font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.pc-cell:hover { border-color: var(--cyan); color: var(--text); }
+.pc-cell.prime { background: rgba(34, 211, 238, .12); border-color: var(--cyan); color: var(--cyan); font-weight: 800; }
+
 /* ---------- animations ---------- */
 @keyframes pop { 0% { transform: scale(.6); } 70% { transform: scale(1.08); } 100% { transform: scale(1); } }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
