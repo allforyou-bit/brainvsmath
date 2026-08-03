@@ -100,3 +100,5 @@ New-Pin "pin-puzzle-book.png" @("100 Number", "Puzzles") @("Reach the target wit
 New-Pin "pin-daily-game.png" @("A New Math", "Puzzle Every", "Day") @("Free browser game - keep your streak alive", "5 difficulty tiers, from Warm-up to Expert") @("25", "+", "50") "Play free today"
 New-Pin "pin-prime-checker.png" @("Is It Prime?", "Find Out Fast") @("Prime factorization + every divisor, explained", "Free checker - no signup - works to a trillion") @("2", "3", "5", "7") "Check any number"
 New-Pin "pin-prime-chart.png" @("Prime Numbers", "Chart to 200") @("Printable reference for grades 4-7", "46 primes circled + the full list") @("11", "13", "17") "Print it free"
+New-Pin "pin-roman-converter.png" @("Roman Numerals", "Made Simple") @("Type a number or a numeral - it converts both ways", "Every rule shown, plus a practice quiz") @("IV", "IX", "XL") "Convert it free"
+New-Pin "pin-roman-chart.png" @("Roman Numerals", "Chart + Quiz") @("Printable chart with 12 practice problems", "Answer key included - grades 4-7") @("X", "L", "C", "M") "Print it free"
