@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roman Numerals Converter &amp; Practice | Brain vs Math</title>
+<meta name="description" content="Convert Roman numerals to numbers and back with every rule shown, then test yourself with a practice quiz. Free printable chart included, no signup.">
+<link rel="canonical" href="https://brainvsmath.com/roman-numerals/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Roman Numerals Converter &amp; Practice">
+<meta property="og:description" content="Numbers to Roman numerals and back, with the reasoning shown. Practice quiz and printable chart — free, no signup.">
+<meta property="og:url" content="https://brainvsmath.com/roman-numerals/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/roman.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the seven Roman numeral letters?",
+      "acceptedAnswer": { "@type": "Answer", "text": "I is 1, V is 5, X is 10, L is 50, C is 100, D is 500 and M is 1000. Every standard Roman numeral is built from these seven letters, written from the largest value to the smallest and added together, with six subtractive pairs as the only exception." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you write 4 in Roman numerals?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Four is IV, not IIII. A smaller letter placed in front of a larger one is subtracted, so IV means 5 minus 1. The same rule gives IX for 9, XL for 40, XC for 90, CD for 400 and CM for 900. These six pairs are the only subtractions allowed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is there no zero in Roman numerals?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The system was built for counting and recording totals, where a symbol for nothing is never needed. Because there is no zero there is also no place value, which is why Roman numerals are read by adding up symbols rather than by column, and why written arithmetic with them is so awkward." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the largest Roman numeral?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In standard form the largest is MMMCMXCIX, which is 3999, because no letter may be written more than three times in a row. Larger values were written with a vinculum, a bar drawn over a numeral to multiply it by a thousand, so a barred V meant 5000." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you write the current year in Roman numerals?",
+      "acceptedAnswer": { "@type": "Answer", "text": "2026 is MMXXVI: MM for 2000, XX for 20 and VI for 6. Years are built the same way as any other number, which is why film credits and building cornerstones can be read with the same rules." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">🏛️ Both directions · rules shown · practice quiz</div>
+  <h1>Roman Numerals Converter</h1>
+  <p class="muted">Type a number or a numeral — it works out which you meant. You get the answer, the pieces it is built from and the rule behind each one, plus a quiz and a printable chart.</p>
+
+  <section class="card no-print">
+    <div class="pc-form">
+      <input id="rnInput" type="text" class="pc-input" value="2026" aria-label="Number or Roman numeral to convert" autocomplete="off" spellcheck="false">
+      <button class="btn primary" id="rnConvert">Convert</button>
+      <button class="btn" id="rnRandom">🎲 Random</button>
+    </div>
+    <div class="tier-chips" style="margin-top:.7rem" aria-label="Examples">
+      <button class="chip" data-example="4">4</button>
+      <button class="chip" data-example="9">9</button>
+      <button class="chip" data-example="49">49</button>
+      <button class="chip" data-example="2026">2026</button>
+      <button class="chip" data-example="3999">3999</button>
+      <button class="chip" data-example="XIV">XIV</button>
+      <button class="chip" data-example="MCMLXXXIV">MCMLXXXIV</button>
+      <button class="chip" data-example="IIII">IIII</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="rnResult" aria-live="polite">
+    <div class="pc-verdict" id="rnVerdict">—</div>
+    <div id="rnDetail">
+      <div class="rn-parts" id="rnParts" aria-label="How the numeral is built"></div>
+      <div class="pc-facts" id="rnFacts"></div>
+      <p class="rn-note hidden" id="rnNote"></p>
+      <ol class="steps-list muted" id="rnSteps" style="margin-top:.9rem"></ol>
+    </div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Practice</h2>
+    <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Answer in either direction. Press Enter to check — a wrong answer shows the right one and resets the streak.</p>
+
+    <div class="tier-chips" aria-label="Question direction">
+      <button class="chip" data-dir="mixed">Mixed</button>
+      <button class="chip" data-dir="toRoman">Number → numeral</button>
+      <button class="chip" data-dir="toNumber">Numeral → number</button>
+    </div>
+    <div class="tier-chips" aria-label="Number range">
+      <button class="chip" data-max="100">1–100</button>
+      <button class="chip" data-max="1000">1–1000</button>
+      <button class="chip" data-max="3999">1–3999</button>
+    </div>
+
+    <div class="rn-quiz">
+      <div class="rn-prompt" id="rnQPrompt">—</div>
+      <div class="muted" id="rnQHint" style="font-size:.85rem"></div>
+      <div class="pc-form" style="margin-top:.8rem">
+        <input id="rnQInput" type="text" class="pc-input" autocomplete="off" spellcheck="false" aria-label="Your answer">
+        <button class="btn primary" id="rnQCheck">Check</button>
+        <button class="btn ghost" id="rnQSkip">Skip</button>
+      </div>
+      <div class="rn-feedback" id="rnQFeedback" aria-live="polite"></div>
+    </div>
+
+    <div class="pc-facts">
+      <div class="pc-fact"><span class="k">Score</span><span class="v" id="rnScore">0 / 0</span></div>
+      <div class="pc-fact"><span class="k">Streak</span><span class="v" id="rnStreak">0</span></div>
+      <div class="pc-fact"><span class="k">Best streak</span><span class="v" id="rnBest">0</span></div>
+    </div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Reference chart</h2>
+    <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Tap any entry to run it through the converter.</p>
+    <div class="rn-chart" id="rnChart" aria-label="Roman numeral reference chart"></div>
+    <div class="controls" style="margin-top:.9rem">
+      <button class="btn ghost" id="rnPrint">🖨️ Print chart + 12 practice problems</button>
+    </div>
+  </section>
+
+  <!-- printable sheet -->
+  <section class="card ws-sheet hidden" id="rnSheet" aria-label="Printable Roman numeral chart and worksheet"></section>
+
+  <section class="seo-block no-print">
+    <h2>The seven letters</h2>
+    <p class="muted">
+      Every Roman numeral is spelled from seven letters: <strong>I</strong> = 1, <strong>V</strong> = 5,
+      <strong>X</strong> = 10, <strong>L</strong> = 50, <strong>C</strong> = 100, <strong>D</strong> = 500,
+      <strong>M</strong> = 1,000. Write them largest to smallest and add as you read — MMXXVI is
+      1,000 + 1,000 + 10 + 10 + 5 + 1 = 2,026. There is no zero and no place value, so the position of a
+      letter only matters through one exception: the subtractive pairs.
+    </p>
+
+    <h2 style="margin-top:1.6rem">The four rules that decide every spelling</h2>
+    <ol class="steps-list muted">
+      <li><strong>Add as you go, biggest first.</strong> LXVII reads 50 + 10 + 5 + 1 + 1 = 67.</li>
+      <li><strong>A smaller letter in front means subtract.</strong> IV = 4, IX = 9, XL = 40, XC = 90, CD = 400, CM = 900. Those six pairs are the whole list — IC and IM are not numerals.</li>
+      <li><strong>Only I, X, C and M may repeat, at most three times.</strong> This is why 4 is IV rather than IIII, and why 3,999 is the ceiling: MMMM is not allowed.</li>
+      <li><strong>V, L and D never repeat and are never subtracted.</strong> Two V's would just be an X, so 10 is written X.</li>
+    </ol>
+    <p class="muted">
+      Put together, the rules give exactly one correct spelling per number. This converter uses that
+      standard form — but it will still read a non-standard numeral like IIII (common on clock faces)
+      and tell you what the usual spelling would be.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Where you still meet them</h2>
+    <p class="muted">
+      Roman numerals survive wherever a number needs to look formal or sit apart from ordinary digits:
+      copyright years in film credits, cornerstones and clock faces, chapter and act numbers, monarch and
+      pope names, Super Bowl editions, and the front matter page numbers of printed books. Reading them is
+      a small skill with a long shelf life — and the reason a converter beats memorising is that the rules
+      are short enough to learn in an afternoon.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How do you write 4 in Roman numerals?</summary><p>IV — a smaller letter in front of a larger one is subtracted, so IV is 5 − 1. IIII appears on some clock faces but is not standard form.</p></details>
+      <details><summary>What is 2026 in Roman numerals?</summary><p>MMXXVI: MM (2,000) + XX (20) + VI (6).</p></details>
+      <details><summary>Why is there no zero?</summary><p>The system records totals rather than positions. Without place value there is nothing for a zero to hold, which is also why arithmetic on paper is so clumsy in Roman numerals.</p></details>
+      <details><summary>What is the largest Roman numeral?</summary><p>MMMCMXCIX = 3,999 in standard form. Above that, a bar over a numeral (the vinculum) multiplied it by 1,000 — V̄ meant 5,000.</p></details>
+      <details><summary>Is IC a valid way to write 99?</summary><p>No. Only I, X and C can be subtracted, and only from the next two larger symbols. 99 is XCIX — 90 + 9.</p></details>
+      <details><summary>How do I remember the order?</summary><p>The mnemonic "My Dear Cat Loves Xtra Vitamins Intensely" runs M, D, C, L, X, V, I — largest to smallest, the order you write them in.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../prime-number-checker/">prime number checker</a> ·
+      <a href="../fraction-calculator/">fraction calculator</a> ·
+      <a href="../long-division/">long division</a> ·
+      <a href="../rounding/">rounding practice</a> ·
+      <a href="../times-tables/">times tables</a> ·
+      <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

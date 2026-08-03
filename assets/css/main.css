@@ -516,6 +516,38 @@ button { font-family: inherit; }
 .pc-cell:hover { border-color: var(--cyan); color: var(--text); }
 .pc-cell.prime { background: rgba(34, 211, 238, .12); border-color: var(--cyan); color: var(--cyan); font-weight: 800; }
 
+/* ---------- roman numerals ---------- */
+.rn-parts { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem; margin-top: .8rem; }
+.rn-part {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: .3rem .55rem; text-align: center; min-width: 3.2rem;
+}
+.rn-part .sym { display: block; font: 800 1.05rem/1.2 var(--mono); color: var(--cyan); letter-spacing: .02em; }
+.rn-part .val { display: block; font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.rn-part.sum { border-color: var(--cyan); }
+.rn-part.sum .val { color: var(--text); font-weight: 800; font-size: .9rem; }
+.rn-note {
+  margin: 1rem 0 0; background: var(--surface2); border: 1px solid var(--gold);
+  border-radius: var(--radius-sm); padding: .6rem .75rem; font-size: .88rem; color: var(--muted);
+}
+.rn-chart { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.2rem, 1fr)); gap: .3rem; }
+.rn-cell {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: .35rem .2rem; cursor: pointer; text-align: center; font-family: var(--font);
+}
+.rn-cell:hover { border-color: var(--cyan); }
+.rn-cell .n { display: block; font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.rn-cell .r { display: block; font: 700 .92rem/1.3 var(--mono); color: var(--text); word-break: break-all; }
+.rn-cell:hover .r { color: var(--cyan); }
+.rn-quiz { margin-top: 1rem; }
+.rn-prompt {
+  text-align: center; font: 800 clamp(1.6rem, 8vw, 2.4rem)/1.2 var(--mono);
+  font-variant-numeric: tabular-nums; word-break: break-all;
+}
+.rn-feedback { min-height: 1.4rem; margin-top: .6rem; text-align: center; font-size: .9rem; color: var(--muted); }
+.rn-feedback.ok { color: var(--green); font-weight: 700; }
+.rn-feedback.bad { color: var(--gold); font-weight: 700; }
+
 /* ---------- animations ---------- */
 @keyframes pop { 0% { transform: scale(.6); } 70% { transform: scale(1.08); } 100% { transform: scale(1); } }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
