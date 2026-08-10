@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telling Time Worksheets &amp; Clock Practice | Brain vs Math</title>
+<meta name="description" content="Free printable telling time worksheets with answer keys, plus an analog clock you can practice reading. O'clock to the minute, no signup.">
+<link rel="canonical" href="https://brainvsmath.com/telling-time/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Telling Time Worksheets &amp; Clock Practice">
+<meta property="og:description" content="Read the clock, then print a worksheet. Five levels from o'clock to the minute, answer keys included — free, no signup.">
+<meta property="og:url" content="https://brainvsmath.com/telling-time/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/tellingtime.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you read an analog clock?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Read the short hand first: it gives the hour, and it counts as the number it has already passed, not the one it is closest to. Then read the long hand for the minutes, counting five for every number on the dial. A short hand just past 3 with a long hand on 9 is 3:45." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does quarter past and quarter to mean?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An hour is split into four quarters of fifteen minutes. Quarter past means fifteen minutes after the hour, so quarter past three is 3:15. Quarter to means fifteen minutes before the next hour, so quarter to four is 3:45. Half past is thirty minutes, the midpoint." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the hour hand sit between two numbers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The hour hand moves continuously, drifting half a degree every minute, so by half past it sits midway between two numbers. This is the single most common source of errors: at 4:50 the hour hand is almost touching 5, but the time is still ten to five, not ten to four or five o'clock." }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age do children learn to tell the time?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most curricula introduce whole hours and half hours around ages five to six, quarter hours and five-minute intervals around seven, and reading to the nearest minute by age eight or nine. Working through those stages in order matters more than the exact age." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you tell the hour hand from the minute hand?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The hour hand is the shorter and thicker of the two, and it moves so slowly that it looks still. The minute hand is longer and reaches close to the numbers on the edge of the dial. If two hands overlap, the one whose tip is nearer the rim is the minute hand." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">🕐 Five levels · printable both ways · answer keys</div>
+  <h1>Telling Time Worksheets</h1>
+  <p class="muted">Practice on a real clock face here, then print a worksheet for the table. Two kinds of sheet: read the clock and write the time, or read the time and draw the hands. Every sheet comes with its answer key.</p>
+
+  <section class="card no-print">
+    <div class="tier-chips" id="ttLevels" aria-label="Difficulty level"></div>
+    <p class="muted" id="ttLevelNote" style="font-size:.85rem;margin:.1rem 0 0"></p>
+
+    <div class="tt-clock-wrap" id="ttClock" aria-live="polite"></div>
+
+    <div class="pc-form" style="justify-content:center">
+      <input id="ttInput" type="text" class="pc-input" placeholder="3:45" aria-label="The time shown on the clock" autocomplete="off" spellcheck="false" inputmode="numeric">
+      <button class="btn primary" id="ttCheck">Check</button>
+      <button class="btn" id="ttShow">Show answer</button>
+      <button class="btn ghost" id="ttNew">🎲 New clock</button>
+    </div>
+    <div class="tt-feedback" id="ttFeedback" aria-live="polite"></div>
+
+    <div class="pc-facts">
+      <div class="pc-fact"><span class="k">Score</span><span class="v" id="ttScore">0 / 0</span></div>
+      <div class="pc-fact"><span class="k">Streak</span><span class="v" id="ttStreak">0</span></div>
+      <div class="pc-fact"><span class="k">Best streak</span><span class="v" id="ttBest">0</span></div>
+    </div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Print a worksheet</h2>
+    <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Twelve problems at the level selected above, answer key on the second page. Press the button again for a fresh set — the clocks are generated new every time.</p>
+    <div class="controls">
+      <button class="btn ghost" id="ttPrintRead">🖨️ Read the clock (12)</button>
+      <button class="btn ghost" id="ttPrintDraw">🖨️ Draw the hands (12)</button>
+    </div>
+  </section>
+
+  <!-- printable sheet -->
+  <section class="card ws-sheet hidden" id="ttSheet" aria-label="Printable telling time worksheet"></section>
+
+  <section class="seo-block no-print">
+    <h2>Read the short hand first</h2>
+    <p class="muted">
+      The clock face carries two scales on the same twelve numbers, which is what makes it hard at first.
+      For the <strong>hour hand</strong> — the short, thick one — the numbers mean what they say. For the
+      <strong>minute hand</strong> — the long one — each number means five minutes, so the 9 at the left
+      means 45. Read the short hand, say the hour out loud, and only then read the long hand.
+    </p>
+    <p class="muted">
+      The rule that catches almost everyone: the hour hand counts the number it has <em>passed</em>, never
+      the number it is nearest. At 4:50 the short hand is a whisker away from the 5, but the hour is still
+      4 — the time is ten to five. Saying "it has gone past the 4, so it is four-something" before looking
+      at the minute hand fixes this error faster than any amount of extra practice.
+    </p>
+
+    <h2 style="margin-top:1.6rem">The five stages, in order</h2>
+    <ol class="steps-list muted">
+      <li><strong>O'clock.</strong> The minute hand points straight up at 12. Only the short hand carries information, so this is where the hour-hand habit gets built.</li>
+      <li><strong>Half hours.</strong> The minute hand points down at 6, and the hour hand now sits visibly between two numbers — the first time the "passed, not nearest" rule matters.</li>
+      <li><strong>Quarter hours.</strong> Quarter past, half past, quarter to. This is where the language of time arrives, and where "to" reverses the direction of counting.</li>
+      <li><strong>Five minutes.</strong> Count round the dial in fives. Knowing the five times table makes this stage fast; not knowing it makes this stage the wall.</li>
+      <li><strong>To the minute.</strong> Count on from the nearest number using the small ticks — 4:38 is "past the 7, plus three ticks".</li>
+    </ol>
+    <p class="muted">
+      Do not skip a stage because the child can chant the answer. The test is a clock they have not seen
+      before, read cold, without counting from 12 each time. That is what the random generator above is
+      for — and the reason each printed sheet is different from the last.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Using the two sheet types</h2>
+    <p class="muted">
+      <strong>Read the clock</strong> checks recognition and is the natural place to start.
+      <strong>Draw the hands</strong> is harder and far more revealing: a child who can read 3:45 but
+      draws the hour hand pointing straight at the 3 has not yet understood that it moves. Alternating
+      the two — one of each per session — catches that gap early. Both print at twelve problems on one
+      page, with the key on a separate sheet so it can be kept back or handed over.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How do you read an analog clock?</summary><p>Short hand for the hour, counting the number it has already passed. Long hand for the minutes, counting five per number. Short hand just past 3, long hand on 9 → 3:45.</p></details>
+      <details><summary>What does "quarter to" mean?</summary><p>Fifteen minutes before the next hour. Quarter to four is 3:45. "Past" counts forward from the hour just gone, "to" counts backward from the hour coming.</p></details>
+      <details><summary>Why is the hour hand between two numbers?</summary><p>It moves continuously — half a degree per minute — so by half past it sits midway between them. It only points exactly at a number on the hour.</p></details>
+      <details><summary>At what age do children learn this?</summary><p>Roughly: whole and half hours at five to six, quarter hours and five-minute intervals at seven, to the nearest minute at eight or nine. Order matters more than age.</p></details>
+      <details><summary>Which hand is which?</summary><p>The hour hand is shorter and thicker. The minute hand is longer and reaches nearly to the rim. If they overlap, the one whose tip is closer to the edge is the minute hand.</p></details>
+      <details><summary>Are the worksheets free to use in class?</summary><p>Yes — print as many as you need for your own classroom or home use. Each press of the button generates a fresh set of clocks.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../times-tables/">times tables</a> ·
+      <a href="../rounding/">rounding practice</a> ·
+      <a href="../long-division/">long division</a> ·
+      <a href="../roman-numerals/">roman numerals</a> ·
+      <a href="../prime-number-checker/">prime number checker</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

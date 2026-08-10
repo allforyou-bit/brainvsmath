@@ -548,6 +548,35 @@ button { font-family: inherit; }
 .rn-feedback.ok { color: var(--green); font-weight: 700; }
 .rn-feedback.bad { color: var(--gold); font-weight: 700; }
 
+/* ---------- telling time (analog clock SVG) ---------- */
+.bvm-clock { display: block; width: 100%; height: auto; overflow: visible; }
+.bvm-clock .dial { fill: none; stroke: currentColor; stroke-width: 3; opacity: .8; }
+.bvm-clock .tick { stroke: currentColor; stroke-width: 1.4; opacity: .4; }
+.bvm-clock .tick.maj { stroke-width: 3; opacity: .75; }
+.bvm-clock .num { fill: currentColor; font-size: 17px; font-weight: 700; text-anchor: middle; }
+.bvm-clock .hand { stroke: currentColor; stroke-linecap: round; }
+.bvm-clock .hand.h { stroke-width: 7; }
+.bvm-clock .hand.m { stroke-width: 4.5; stroke: var(--cyan); }
+.bvm-clock .pin { fill: currentColor; }
+.tt-clock-wrap { width: min(260px, 72vw); margin: .6rem auto 1.1rem; }
+.tt-feedback { min-height: 1.4rem; margin-top: .6rem; text-align: center; font-size: .9rem; color: var(--muted); }
+.tt-feedback.ok { color: var(--green); font-weight: 700; }
+.tt-feedback.bad { color: var(--gold); font-weight: 700; }
+/* sheets are white-on-black-ink: force the accent hand to ink */
+.ws-sheet .bvm-clock { color: #111; }
+.ws-sheet .bvm-clock .hand.m { stroke: #111; }
+.ws-instruction { font-size: .85rem; color: #555; margin: 0 0 1rem; }
+.tt-sheet-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem .9rem; }
+.tt-sheet-grid .item { break-inside: avoid; page-break-inside: avoid; text-align: center; }
+.tt-sheet-grid .item .lbl { margin-top: .3rem; font-size: .92rem; font-variant-numeric: tabular-nums; }
+.tt-keygrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .7rem .6rem; }
+.tt-keygrid .item { break-inside: avoid; page-break-inside: avoid; text-align: center; }
+.tt-keygrid .item .lbl { margin-top: .2rem; font-size: .8rem; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) {
+  .tt-sheet-grid { grid-template-columns: repeat(2, 1fr); }
+  .tt-keygrid { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* ---------- animations ---------- */
 @keyframes pop { 0% { transform: scale(.6); } 70% { transform: scale(1.08); } 100% { transform: scale(1); } }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }

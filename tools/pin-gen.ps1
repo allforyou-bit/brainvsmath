@@ -102,3 +102,5 @@ New-Pin "pin-prime-checker.png" @("Is It Prime?", "Find Out Fast") @("Prime fact
 New-Pin "pin-prime-chart.png" @("Prime Numbers", "Chart to 200") @("Printable reference for grades 4-7", "46 primes circled + the full list") @("11", "13", "17") "Print it free"
 New-Pin "pin-roman-converter.png" @("Roman Numerals", "Made Simple") @("Type a number or a numeral - it converts both ways", "Every rule shown, plus a practice quiz") @("IV", "IX", "XL") "Convert it free"
 New-Pin "pin-roman-chart.png" @("Roman Numerals", "Chart + Quiz") @("Printable chart with 12 practice problems", "Answer key included - grades 4-7") @("X", "L", "C", "M") "Print it free"
+New-Pin "pin-telling-time.png" @("Telling Time", "Worksheets") @("12 clock faces per page + answer key", "O'clock to the minute - 5 levels - grades 1-3") @("3:45", "9:20") "Print it free"
+New-Pin "pin-clock-practice.png" @("Read The Clock", "Or Draw It") @("Two worksheet types from one free page", "Fresh clocks every print - no signup") @("12", "3", "6", "9") "Practice free"
