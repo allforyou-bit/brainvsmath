@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counting Money &amp; Making Change Worksheets | Brain vs Math</title>
+<meta name="description" content="Free printable money worksheets with answer keys. Count US coins and bills, practice making change, and print a fresh set every time — no signup.">
+<link rel="canonical" href="https://brainvsmath.com/money-worksheets/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Counting Money &amp; Making Change Worksheets">
+<meta property="og:description" content="Count the coins on screen, then print a worksheet for the table. US coins and bills, five levels, answer keys included — free, no signup.">
+<meta property="og:url" content="https://brainvsmath.com/money-worksheets/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/money.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the US coins and how much is each one worth?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There are four everyday coins. A penny is 1 cent and is the only copper-colored one. A nickel is 5 cents and is thick and medium sized. A dime is 10 cents and is the smallest coin of all, which is the detail that confuses most beginners. A quarter is 25 cents and is the largest. Four quarters, ten dimes, twenty nickels or one hundred pennies each make one dollar." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the easiest way to count a handful of coins?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sort the coins into groups by value, then count from the largest group down: quarters first, then dimes, then nickels, then pennies. Counting in descending order keeps the running total moving in one direction and means you never have to restart. Counting a jumbled pile in the order it happens to lie is the main cause of wrong answers." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you make change without subtracting?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Count up from the price to the amount handed over. For a $3.47 item paid with a $5 bill: three pennies gets you to $3.50, two quarters gets you to $4.00, and a dollar bill gets you to $5.00. That is $1.53 in change, found by adding forwards instead of borrowing across zeros. This is how a cashier does it at the till." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the dime smaller than the nickel when it is worth more?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Coin sizes are a leftover from when coins were made of precious metal and the size reflected the silver content rather than the face value. The dime is smaller because it once held less silver than a larger coin of the same era. Nothing about a modern coin's size tells you its worth, which is why children need to learn the four coins by name rather than by guessing from size." }
+    },
+    {
+      "@type": "Question",
+      "name": "At what grade do children learn to count money and make change?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Coin recognition and counting like coins usually arrive in first grade, mixed coins up to a dollar in second grade, and making change with dollars and cents in third grade. Making change reliably depends on being comfortable counting on past a multiple of ten, so it is worth checking that skill first if change problems keep going wrong." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these money worksheets free to print for a classroom?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Print as many as you need for your own classroom or home use, with no signup and no account. Every press of the print button generates a completely new set of twelve problems with a matching answer key, so each child can have a different sheet." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">🪙 US coins &amp; bills · five levels · answer keys</div>
+  <h1>Money &amp; Making Change Worksheets</h1>
+  <p class="muted">Count a handful of coins on screen, work out the change from a purchase, then print a worksheet for the table. Coins are drawn at their real relative sizes — the dime really is the small one. Every sheet comes with its answer key.</p>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Count the money</h2>
+    <div class="tier-chips" id="mcLevels" aria-label="Counting difficulty level"></div>
+    <p class="muted" id="mcLevelNote" style="font-size:.85rem;margin:.1rem 0 0"></p>
+
+    <div id="mcPile" aria-live="polite"></div>
+
+    <div class="pc-form" style="justify-content:center">
+      <input id="mcInput" type="text" class="pc-input" placeholder="0.45" aria-label="The total value of the coins shown" autocomplete="off" spellcheck="false" inputmode="decimal">
+      <button class="btn primary" id="mcCheck">Check</button>
+      <button class="btn" id="mcShow">Show answer</button>
+      <button class="btn ghost" id="mcNew">🎲 New pile</button>
+    </div>
+    <div class="money-feedback" id="mcFeedback" aria-live="polite"></div>
+    <p class="muted" style="font-size:.8rem;text-align:center;margin:.2rem 0 0">Type it any way you like — <code>0.45</code>, <code>45¢</code>, <code>45</code> or <code>$1.45</code> all work.</p>
+
+    <div class="pc-facts">
+      <div class="pc-fact"><span class="k">Score</span><span class="v" id="mcScore">0 / 0</span></div>
+      <div class="pc-fact"><span class="k">Streak</span><span class="v" id="mcStreak">0</span></div>
+      <div class="pc-fact"><span class="k">Best streak</span><span class="v" id="mcBest">0</span></div>
+    </div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Make change</h2>
+    <div class="tier-chips" id="mkLevels" aria-label="Making change difficulty level"></div>
+    <p class="muted" id="mkLevelNote" style="font-size:.85rem;margin:.1rem 0 0"></p>
+
+    <div class="money-till">
+      <span>The item costs <b id="mkPrice">$0.00</b></span>
+      <span>You hand over <b id="mkPaid">$0.00</b></span>
+    </div>
+    <div id="mkPaidPile" aria-live="polite"></div>
+
+    <div class="pc-form" style="justify-content:center">
+      <input id="mkInput" type="text" class="pc-input" placeholder="1.53" aria-label="The change owed" autocomplete="off" spellcheck="false" inputmode="decimal">
+      <button class="btn primary" id="mkCheck">Check</button>
+      <button class="btn" id="mkShow">Show answer</button>
+      <button class="btn ghost" id="mkNew">🎲 New purchase</button>
+    </div>
+    <div class="money-feedback" id="mkFeedback" aria-live="polite"></div>
+
+    <div class="pc-facts">
+      <div class="pc-fact"><span class="k">Score</span><span class="v" id="mkScore">0 / 0</span></div>
+      <div class="pc-fact"><span class="k">Streak</span><span class="v" id="mkStreak">0</span></div>
+      <div class="pc-fact"><span class="k">Best streak</span><span class="v" id="mkBest">0</span></div>
+    </div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Print a worksheet</h2>
+    <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Twelve problems at the levels selected above, answer key on the second page. Press again for a fresh set — the piles and the prices are generated new every time.</p>
+    <div class="controls">
+      <button class="btn ghost" id="moPrintCount">🖨️ Count the money (12)</button>
+      <button class="btn ghost" id="moPrintChange">🖨️ Make change (12)</button>
+    </div>
+  </section>
+
+  <!-- printable sheet -->
+  <section class="card ws-sheet hidden" id="moSheet" aria-label="Printable money worksheet"></section>
+
+  <section class="seo-block no-print">
+    <h2>The four coins</h2>
+    <p class="muted">
+      Size is not a guide to value, and that is the first thing to say out loud. The
+      <strong>dime is the smallest coin there is</strong> and it is worth twice the nickel sitting
+      next to it. Color is the one reliable clue: the penny is the only copper one, and everything
+      else is silver. After that it is names and faces, learned by handling real coins.
+    </p>
+
+    <table class="money-chart">
+      <thead><tr><th>Coin</th><th>Name</th><th>Value</th><th>Makes a dollar with</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><svg class="bvm-coin penny" viewBox="0 0 100 100" role="img" aria-label="penny"><circle class="rim" cx="50" cy="50" r="47"/><circle class="face" cx="50" cy="50" r="40"/><text class="val" x="50" y="50" dy=".35em">1¢</text></svg></td>
+          <td>Penny</td><td>1 cent</td><td>100 of them</td>
+        </tr>
+        <tr>
+          <td><svg class="bvm-coin nickel" viewBox="0 0 100 100" role="img" aria-label="nickel"><circle class="rim" cx="50" cy="50" r="47"/><circle class="face" cx="50" cy="50" r="40"/><text class="val" x="50" y="50" dy=".35em">5¢</text></svg></td>
+          <td>Nickel</td><td>5 cents</td><td>20 of them</td>
+        </tr>
+        <tr>
+          <td><svg class="bvm-coin dime" viewBox="0 0 100 100" role="img" aria-label="dime"><circle class="rim" cx="50" cy="50" r="47"/><circle class="face" cx="50" cy="50" r="40"/><text class="val" x="50" y="50" dy=".35em">10¢</text></svg></td>
+          <td>Dime</td><td>10 cents</td><td>10 of them</td>
+        </tr>
+        <tr>
+          <td><svg class="bvm-coin quarter" viewBox="0 0 100 100" role="img" aria-label="quarter"><circle class="rim" cx="50" cy="50" r="47"/><circle class="face" cx="50" cy="50" r="40"/><text class="val" x="50" y="50" dy=".35em">25¢</text></svg></td>
+          <td>Quarter</td><td>25 cents</td><td>4 of them</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:1.6rem">Count from the largest down</h2>
+    <p class="muted">
+      Given a jumbled handful, the instinct is to count the coins in the order they happen to lie.
+      That is what produces wrong totals, because the running number keeps changing step size in an
+      unpredictable way. Sort first — quarters, dimes, nickels, pennies — then count each group in
+      turn and carry the total forward: <em>25, 50, 75 … 85, 95 … 96, 97</em>. Descending order means
+      the awkward small steps come last, when the hard part is already done.
+    </p>
+    <p class="muted">
+      The pile generator above always draws the coins big-first for exactly this reason. A child who
+      can total a sorted pile but not a jumbled one has not learned to sort, which is a different and
+      easier thing to fix than learning to count.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Making change is addition, not subtraction</h2>
+    <p class="muted">
+      Written as a subtraction, <strong>$5.00 − $3.47</strong> means borrowing across two zeros — one
+      of the least forgiving procedures in elementary arithmetic. Cashiers never do this. They count
+      up from the price to the note:
+    </p>
+    <ol class="steps-list muted">
+      <li>$3.47 → $3.50 with <strong>three pennies</strong> — get to the nearest nickel first.</li>
+      <li>$3.50 → $4.00 with <strong>two quarters</strong> — then to the next whole dollar.</li>
+      <li>$4.00 → $5.00 with <strong>one dollar bill</strong> — then to the note handed over.</li>
+      <li>Add what you handed back: 3¢ + 50¢ + $1.00 = <strong>$1.53</strong>.</li>
+    </ol>
+    <p class="muted">
+      Every step is a small forward count to a friendly number, and the answer arrives as a pile of
+      real coins rather than a column of digits. The practice above shows this breakdown with every
+      answer, so the method is visible even when the answer was guessed.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Using the two sheets</h2>
+    <p class="muted">
+      <strong>Count the money</strong> is the place to start and stays useful for a long time — move
+      up a level only when a jumbled pile is totaled correctly first time, not merely eventually.
+      <strong>Make change</strong> is the harder sheet and the one that transfers to a real shop.
+      Both print twelve problems on one page with the key on a separate sheet, so it can be kept back
+      or handed over. Coins print as black outlines rather than solid color: clearer on a mono
+      printer, and far kinder to the toner.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>What are the four US coins worth?</summary><p>Penny 1¢, nickel 5¢, dime 10¢, quarter 25¢. The penny is the only copper one; the dime is the smallest of all four despite being worth more than the nickel.</p></details>
+      <details><summary>What is the easiest way to count a handful of coins?</summary><p>Sort by value, then count from the largest group down — quarters, dimes, nickels, pennies. One direction, no restarts.</p></details>
+      <details><summary>How do you make change without subtracting?</summary><p>Count up from the price to the note. $3.47 → $3.50 (3 pennies) → $4.00 (2 quarters) → $5.00 ($1 bill) = $1.53 change.</p></details>
+      <details><summary>Why is the dime smaller than the nickel?</summary><p>A leftover from when coin size tracked silver content instead of face value. Modern size tells you nothing about worth, so the coins have to be learned by name.</p></details>
+      <details><summary>What grade is this for?</summary><p>Coin recognition and like coins in grade 1, mixed coins to a dollar in grade 2, making change in grade 3. The levels above run in that order.</p></details>
+      <details><summary>Are the worksheets free to use in class?</summary><p>Yes — print as many as you need, no signup. Each press of the button generates a fresh set of twelve problems and a matching key.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../telling-time/">telling time worksheets</a> ·
+      <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../times-tables/">times tables</a> ·
+      <a href="../rounding/">rounding practice</a> ·
+      <a href="../percentage-calculator/">percentage calculator</a> ·
+      <a href="../long-division/">long division</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -104,3 +104,5 @@ New-Pin "pin-roman-converter.png" @("Roman Numerals", "Made Simple") @("Type a n
 New-Pin "pin-roman-chart.png" @("Roman Numerals", "Chart + Quiz") @("Printable chart with 12 practice problems", "Answer key included - grades 4-7") @("X", "L", "C", "M") "Print it free"
 New-Pin "pin-telling-time.png" @("Telling Time", "Worksheets") @("12 clock faces per page + answer key", "O'clock to the minute - 5 levels - grades 1-3") @("3:45", "9:20") "Print it free"
 New-Pin "pin-clock-practice.png" @("Read The Clock", "Or Draw It") @("Two worksheet types from one free page", "Fresh clocks every print - no signup") @("12", "3", "6", "9") "Practice free"
+New-Pin "pin-money-worksheets.png" @("Counting Money", "Worksheets") @("12 coin piles per page + answer key", 'Pennies to $20 bills - 5 levels - grades 1-3') @("25", "10", "5", "1") "Print it free"
+New-Pin "pin-making-change.png" @("Making Change", "Without Borrowing") @("Count up from the price - the cashier method", "Free practice page + printable sheets, no signup") @('$5.00', '-', '$3.47') "Practice free"

@@ -577,6 +577,71 @@ button { font-family: inherit; }
   .tt-keygrid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* ---------- money (coins & bills as SVG) ---------- */
+/* widths track the real US diameters so size is a usable clue */
+.bvm-coin { display: block; height: auto; flex: none; }
+.bvm-coin.quarter { width: 3rem; }
+.bvm-coin.nickel  { width: 2.62rem; }
+.bvm-coin.penny   { width: 2.36rem; }
+.bvm-coin.dime    { width: 2.21rem; }
+.bvm-coin .rim { fill: var(--silver-rim, #8d959f); }
+.bvm-coin .face { fill: var(--silver-face, #b9c0c8); }
+.bvm-coin.penny .rim { fill: #8c5a2b; }
+.bvm-coin.penny .face { fill: #c07b41; }
+.bvm-coin .val { fill: #1b2027; font-size: 30px; font-weight: 800; text-anchor: middle; }
+.bvm-bill { display: block; width: 4.7rem; height: auto; flex: none; }
+.bvm-bill .paper { fill: #4f8f6d; }
+.bvm-bill .inner { fill: none; stroke: #e8f3ec; stroke-width: 2; }
+.bvm-bill .val { fill: #f2faf5; font-size: 30px; font-weight: 800; text-anchor: middle; }
+.money-pile {
+  display: flex; flex-wrap: wrap; gap: .45rem; align-items: center;
+  justify-content: center; margin: .8rem 0;
+}
+.money-feedback { min-height: 1.4rem; margin-top: .6rem; text-align: center; font-size: .9rem; color: var(--muted); }
+.money-feedback.ok { color: var(--green); font-weight: 700; }
+.money-feedback.bad { color: var(--gold); font-weight: 700; }
+.money-till {
+  display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; justify-content: center;
+  align-items: baseline; margin: .3rem 0 .1rem; font-size: 1.05rem;
+}
+.money-till b { font-variant-numeric: tabular-nums; font-size: 1.25rem; }
+.money-chart { width: 100%; border-collapse: collapse; margin-top: .9rem; }
+.money-chart th, .money-chart td { border: 1px solid var(--border); padding: .45rem .6rem; text-align: left; }
+.money-chart th { background: var(--surface2); font-weight: 800; }
+.money-chart td:first-child { width: 4.8rem; text-align: center; }
+.money-chart .bvm-coin, .money-chart .bvm-bill { margin-inline: auto; }
+/* sheets print black on white — drop the colour, keep the outline */
+.ws-sheet .bvm-coin .rim, .ws-sheet .bvm-coin.penny .rim { fill: #111; }
+.ws-sheet .bvm-coin .face, .ws-sheet .bvm-coin.penny .face { fill: #fff; }
+.ws-sheet .bvm-bill .paper { fill: #fff; stroke: #111; stroke-width: 3; }
+.ws-sheet .bvm-bill .inner { stroke: #111; }
+.ws-sheet .bvm-bill .val, .ws-sheet .bvm-coin .val { fill: #111; }
+.ws-sheet .money-pile { gap: .3rem; margin: .35rem 0 .5rem; justify-content: flex-start; }
+.money-sheet-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem .9rem; }
+.money-sheet-grid .item {
+  break-inside: avoid; page-break-inside: avoid;
+  border: 1px solid #bbb; border-radius: 6px; padding: .5rem .6rem;
+}
+.money-sheet-grid .item .q { font-weight: 800; font-size: .95rem; }
+.money-sheet-grid .item .lbl { font-size: .9rem; font-variant-numeric: tabular-nums; }
+.money-change-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.money-change-grid .item {
+  break-inside: avoid; page-break-inside: avoid;
+  border: 1px solid #bbb; border-radius: 6px; padding: .5rem .6rem;
+}
+.money-change-grid .item .q { font-weight: 800; font-size: .95rem; margin-bottom: .25rem; }
+.money-change-grid .item .row {
+  display: flex; justify-content: space-between; gap: .5rem;
+  font-size: .9rem; padding: .1rem 0; font-variant-numeric: tabular-nums;
+}
+.money-change-grid .item .row .blank { font-weight: 400; letter-spacing: .02em; }
+.money-anskey { display: grid; grid-template-columns: repeat(2, 1fr); gap: .25rem 1.4rem; font-size: .88rem; }
+.money-anskey span { color: #555; }
+@media (max-width: 640px) {
+  .money-sheet-grid, .money-change-grid { grid-template-columns: repeat(2, 1fr); }
+  .money-anskey { grid-template-columns: 1fr; }
+}
+
 /* ---------- animations ---------- */
 @keyframes pop { 0% { transform: scale(.6); } 70% { transform: scale(1.08); } 100% { transform: scale(1); } }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
