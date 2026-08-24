@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ratio Calculator: Simplify, Solve &amp; Share | Brain vs Math</title>
+<meta name="description" content="Simplify any ratio, solve a proportion for its missing term, and share an amount in a given ratio. Every step shown, plus free printable worksheets.">
+<link rel="canonical" href="https://brainvsmath.com/ratio-calculator/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="Ratio Calculator: Simplify, Solve &amp; Share">
+<meta property="og:description" content="Reduce a ratio to its simplest form, solve a proportion for the missing term, or split an amount in a ratio — with the working shown every time.">
+<meta property="og:url" content="https://brainvsmath.com/ratio-calculator/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script src="../config.js"></script>
+<script src="../assets/js/core.js" defer></script>
+<script src="../assets/js/ratio.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you simplify a ratio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Divide every term by the greatest common factor of all of them. For 8 : 12 the greatest common factor is 4, so the ratio reduces to 2 : 3. If the ratio contains decimals, multiply every term by ten, a hundred or a thousand first so that all the terms are whole numbers, then divide by the common factor. A ratio is in its simplest form when the terms share no factor other than one." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a ratio and a proportion?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A ratio compares two or more quantities, written as 3 : 4. A proportion is a statement that two ratios are equal, written as 3 : 4 = 12 : 16. So a ratio is a single comparison and a proportion is an equation built from two of them. Solving a proportion means finding the one term that makes both ratios equal." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you solve a proportion for a missing number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cross multiply. Written as fractions, a/b = c/d means a multiplied by d equals b multiplied by c. Rearrange that equation for whichever letter is missing and divide. For 3 : 4 = 12 : d, cross multiplication gives 3d = 48, so d = 16. The same single step works no matter which of the four positions is empty." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you share an amount in a given ratio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Add the terms of the ratio to find the total number of parts, divide the amount by that total to find what one part is worth, then multiply back out. Sharing 240 in the ratio 3 : 5 gives 8 parts, one part is 30, and the shares are 90 and 150. Checking that the shares add back to the original amount catches almost every mistake." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you turn a ratio into a percentage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Divide each term by the total number of parts and multiply by a hundred. In the ratio 2 : 3 there are 5 parts, so the shares are 2 divided by 5 and 3 divided by 5, which is 40% and 60%. Note that a ratio compares the parts to each other while a percentage compares each part to the whole, which is why 2 : 3 is not 20% and 30%." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a ratio like 1 : 4 mean when mixing something?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It means one part of the first thing for every four parts of the second, giving five parts in total. One cup of squash to four cups of water fills five cups. This is the most common place ratios go wrong in real life: 1 : 4 is one fifth of the mixture, not one quarter of it." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../">Daily</a>
+      <a href="../sprint/">Sprint</a>
+      <a href="../times-tables/">Times Tables</a>
+      <a href="../worksheets/">Worksheets</a>
+      <a href="../shop/">Shop</a>
+      <a href="../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+
+  <div class="kicker">⚖️ simplify · solve · share · printable</div>
+  <h1>Ratio &amp; Proportion Calculator</h1>
+  <p class="muted">Three tools for the three things ratios are ever asked to do: reduce one to its simplest form, solve a proportion for the term that is missing, and split an amount fairly between shares. Each answer comes with the working, and every sheet prints with its key.</p>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Simplify a ratio</h2>
+    <p class="muted" style="font-size:.85rem;margin:.1rem 0 .7rem">Two terms or more — <code>8 : 12</code>, <code>3 : 4 : 5</code>, even <code>0.25 : 0.75</code>.</p>
+    <div class="pc-form" style="justify-content:center">
+      <input id="rtSimpInput" type="text" class="pc-input rt-wide" value="8 : 12" aria-label="The ratio to simplify" autocomplete="off" spellcheck="false">
+      <button class="btn primary" id="rtSimpGo">Simplify</button>
+      <button class="btn ghost" id="rtSimpDice">🎲 Example</button>
+    </div>
+    <div id="rtSimpOut" class="rt-out" aria-live="polite"></div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Solve a proportion</h2>
+    <p class="muted" style="font-size:.85rem;margin:.1rem 0 .7rem">Fill in three boxes and leave the fourth empty — that is the one being solved for.</p>
+    <div class="rt-prop">
+      <input id="rtPa" type="text" class="pc-input rt-box" value="3" aria-label="Term A" inputmode="decimal" autocomplete="off">
+      <span class="rt-op">:</span>
+      <input id="rtPb" type="text" class="pc-input rt-box" value="4" aria-label="Term B" inputmode="decimal" autocomplete="off">
+      <span class="rt-op eq">=</span>
+      <input id="rtPc" type="text" class="pc-input rt-box" value="12" aria-label="Term C" inputmode="decimal" autocomplete="off">
+      <span class="rt-op">:</span>
+      <input id="rtPd" type="text" class="pc-input rt-box" placeholder="?" aria-label="Term D" inputmode="decimal" autocomplete="off">
+    </div>
+    <div class="controls" style="margin-top:.8rem">
+      <button class="btn primary" id="rtPropGo">Solve</button>
+      <button class="btn ghost" id="rtPropDice">🎲 Example</button>
+    </div>
+    <div id="rtPropOut" class="rt-out" aria-live="polite"></div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Share an amount in a ratio</h2>
+    <p class="muted" style="font-size:.85rem;margin:.1rem 0 .7rem">Split money, sweets, time or work between two or more shares.</p>
+    <div class="pc-form" style="justify-content:center">
+      <input id="rtShareAmount" type="text" class="pc-input rt-box wide" value="240" aria-label="The amount to share" inputmode="decimal" autocomplete="off">
+      <span class="rt-op">in the ratio</span>
+      <input id="rtShareRatio" type="text" class="pc-input rt-wide" value="3 : 5" aria-label="The ratio to share it in" autocomplete="off" spellcheck="false">
+      <button class="btn primary" id="rtShareGo">Share it</button>
+      <button class="btn ghost" id="rtShareDice">🎲 Example</button>
+    </div>
+    <div id="rtShareOut" class="rt-out" aria-live="polite"></div>
+  </section>
+
+  <section class="card no-print">
+    <h2 style="font-size:1.15rem;margin-bottom:.2rem">Print a worksheet</h2>
+    <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Twelve problems on one page with the answer key on the second. Press again for a completely fresh set — nothing repeats between prints, so every child can have a different sheet.</p>
+    <div class="controls">
+      <button class="btn ghost" id="rtPrintSimplify">🖨️ Simplify ratios (12)</button>
+      <button class="btn ghost" id="rtPrintProportion">🖨️ Solve proportions (12)</button>
+      <button class="btn ghost" id="rtPrintShare">🖨️ Share an amount (12)</button>
+    </div>
+  </section>
+
+  <!-- printable sheet -->
+  <section class="card ws-sheet hidden" id="rtSheet" aria-label="Printable ratio worksheet"></section>
+
+  <section class="seo-block no-print">
+    <h2>What a ratio actually says</h2>
+    <p class="muted">
+      A ratio compares quantities <em>to each other</em>, not to the whole — and nearly every mistake
+      made with ratios comes from forgetting that one sentence. In <strong>1 : 4</strong> there are
+      five parts, so the first quantity is a <em>fifth</em> of the mixture rather than a quarter of
+      it. One cup of squash and four cups of water fills five cups. Reading a ratio as a fraction of
+      the total is the single most reliable way to get squash wrong, concrete wrong, and exam
+      questions wrong.
+    </p>
+    <p class="muted">
+      The bar drawn under each answer above exists for that reason. It shows the terms as blocks
+      side by side, so the total number of parts is something you can see rather than something you
+      have to remember to add up.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Simplifying: divide by what they share</h2>
+    <p class="muted">
+      A ratio is in its simplest form when its terms share no factor except one. Getting there is a
+      single move — find the greatest common factor of every term and divide them all by it. For
+      <strong>8 : 12</strong> that factor is 4, giving <strong>2 : 3</strong>. Halving repeatedly
+      works too and needs no arithmetic at all beyond halving, it just takes more steps: 8 : 12 →
+      4 : 6 → 2 : 3.
+    </p>
+    <p class="muted">
+      Decimals look harder than they are. Multiply every term by whatever power of ten clears the
+      decimal point — <strong>0.25 : 0.75</strong> becomes 25 : 75 — and then reduce as normal to get
+      <strong>1 : 3</strong>. The calculator above scales before it divides for exactly this reason,
+      so the answer is exact rather than a rounded near miss.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Proportions: one cross multiplication</h2>
+    <p class="muted">
+      A proportion is two ratios set equal: <strong>3 : 4 = 12 : d</strong>. Write it as fractions
+      and the rule falls out — if <strong>a/b = c/d</strong> then <strong>a × d = b × c</strong>.
+      Every proportion problem, whichever box is empty, is that one identity rearranged:
+    </p>
+    <ol class="steps-list muted">
+      <li>Missing <strong>d</strong>: d = (b × c) ÷ a</li>
+      <li>Missing <strong>c</strong>: c = (a × d) ÷ b</li>
+      <li>Missing <strong>b</strong>: b = (a × d) ÷ c</li>
+      <li>Missing <strong>a</strong>: a = (b × c) ÷ d</li>
+    </ol>
+    <p class="muted">
+      Then check by multiplying the two diagonals: if the cross products match, the answer is right.
+      That check costs five seconds and catches the divide-instead-of-multiply slip that accounts for
+      most lost marks here. The solver above prints it with every answer.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Sharing: count the parts first</h2>
+    <p class="muted">
+      Sharing <strong>240 in the ratio 3 : 5</strong> is three steps and the first one is the one
+      people skip:
+    </p>
+    <ol class="steps-list muted">
+      <li>Add the terms — 3 + 5 = <strong>8 parts</strong> altogether.</li>
+      <li>Divide the amount by the parts — 240 ÷ 8 = <strong>30 per part</strong>.</li>
+      <li>Multiply back out — 3 × 30 = <strong>90</strong> and 5 × 30 = <strong>150</strong>.</li>
+    </ol>
+    <p class="muted">
+      Finish by adding the shares back: 90 + 150 = 240. If they do not add to what you started with,
+      something went wrong in step two. The method is identical for three shares or more — the only
+      thing that changes is how many terms go into the total.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Using the three sheets</h2>
+    <p class="muted">
+      <strong>Simplify</strong> is the place to start, because reducing is what the other two both
+      lean on. <strong>Solve proportions</strong> comes next and deliberately moves the blank around
+      all four positions — a class that has only ever seen the blank on the right learns a pattern
+      rather than the method. <strong>Share an amount</strong> is the applied sheet and the one that
+      matches how ratios show up in exams and in real life. All three print twelve problems on one
+      page with the key on a separate sheet, so it can be handed over or kept back.
+    </p>
+
+    <h2 style="margin-top:1.6rem">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How do you simplify a ratio?</summary><p>Divide every term by their greatest common factor — 8 : 12 has a factor of 4, so it reduces to 2 : 3. Clear any decimals by multiplying through by a power of ten first.</p></details>
+      <details><summary>What is the difference between a ratio and a proportion?</summary><p>A ratio compares quantities (3 : 4). A proportion states that two ratios are equal (3 : 4 = 12 : 16). Solving a proportion means finding the term that makes both sides match.</p></details>
+      <details><summary>How do you solve a proportion?</summary><p>Cross multiply: a/b = c/d means a × d = b × c. Rearrange for the empty box and divide. The same step works whichever of the four positions is blank.</p></details>
+      <details><summary>How do you share an amount in a ratio?</summary><p>Add the terms for the total parts, divide the amount by that total for one part, then multiply back out. 240 in 3 : 5 → 8 parts → 30 each → 90 and 150.</p></details>
+      <details><summary>How do you turn a ratio into a percentage?</summary><p>Divide each term by the total parts and multiply by 100. In 2 : 3 there are 5 parts, so the shares are 40% and 60% — not 20% and 30%.</p></details>
+      <details><summary>Does 1 : 4 mean one quarter?</summary><p>No — it means one part in five. 1 : 4 has five parts altogether, so the first quantity is a fifth of the mixture.</p></details>
+    </div>
+
+    <p class="muted" style="margin-top:1.2rem">
+      More tools: <a href="../fraction-calculator/">fraction calculator</a> ·
+      <a href="../percentage-calculator/">percentage calculator</a> ·
+      <a href="../prime-number-checker/">prime factors &amp; divisors</a> ·
+      <a href="../long-division/">long division</a> ·
+      <a href="../money-worksheets/">money worksheets</a> ·
+      <a href="../worksheets/">printable worksheets</a> ·
+      <a href="../">today's puzzle</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../about/">About</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../terms/">Terms</a>
+      <a href="https://github.com/allforyou-bit/brainvsmath" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

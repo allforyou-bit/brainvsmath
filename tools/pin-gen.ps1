@@ -106,3 +106,5 @@ New-Pin "pin-telling-time.png" @("Telling Time", "Worksheets") @("12 clock faces
 New-Pin "pin-clock-practice.png" @("Read The Clock", "Or Draw It") @("Two worksheet types from one free page", "Fresh clocks every print - no signup") @("12", "3", "6", "9") "Practice free"
 New-Pin "pin-money-worksheets.png" @("Counting Money", "Worksheets") @("12 coin piles per page + answer key", 'Pennies to $20 bills - 5 levels - grades 1-3') @("25", "10", "5", "1") "Print it free"
 New-Pin "pin-making-change.png" @("Making Change", "Without Borrowing") @("Count up from the price - the cashier method", "Free practice page + printable sheets, no signup") @('$5.00', '-', '$3.47') "Practice free"
+New-Pin "pin-ratio-calculator.png" @("Simplify Any", "Ratio In One", "Step") @("Divide every term by their common factor", "Free calculator - shows the working - no signup") @("8:12", "=", "2:3") "Try it free"
+New-Pin "pin-share-in-ratio.png" @("Share Any", "Amount In A", "Ratio") @("Count the parts, find one part, multiply back", "Proportions + printable worksheets with keys") @("3", ":", "5") "Print it free"

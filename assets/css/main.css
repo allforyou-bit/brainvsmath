@@ -642,6 +642,64 @@ button { font-family: inherit; }
   .money-anskey { grid-template-columns: 1fr; }
 }
 
+/* ---------- ratio & proportion ---------- */
+/* .pc-input sets flex: 1 1 12rem — these fields hold a fixed size instead,
+   so the four proportion boxes stay boxes rather than stretching to a column */
+.rt-wide { flex: 0 1 11rem; width: 11rem; min-width: 7rem; text-align: center; }
+.rt-box { flex: none; width: 4.6rem; text-align: center; }
+.rt-box.wide { width: 6.6rem; }
+.rt-prop { display: flex; align-items: center; justify-content: center; gap: .4rem; flex-wrap: wrap; }
+.rt-op { font-weight: 800; color: var(--muted); font-size: 1.1rem; }
+.rt-op.eq { color: var(--cyan); font-size: 1.35rem; padding-inline: .25rem; }
+.rt-out { margin-top: 1rem; }
+.rt-out:empty { margin-top: 0; }
+.rt-answer {
+  text-align: center; font-weight: 800; font-variant-numeric: tabular-nums;
+  font-size: clamp(1.7rem, 6vw, 2.3rem); color: var(--cyan); letter-spacing: .01em;
+}
+.rt-why { text-align: center; color: var(--muted); font-size: .9rem; margin: .35rem 0 0; }
+.rt-error { text-align: center; color: var(--gold); font-size: .92rem; font-weight: 600; margin: 0; }
+.rt-steps { margin-top: .9rem; color: var(--muted); }
+.rt-steps strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.rt-bar {
+  display: flex; gap: 3px; margin: 1rem 0 .2rem; height: 2.3rem;
+  border-radius: var(--radius-sm); overflow: hidden;
+}
+.rt-seg {
+  display: flex; align-items: center; justify-content: center; min-width: 0;
+  color: #071018; font-weight: 800; font-size: .85rem; font-variant-numeric: tabular-nums;
+  overflow: hidden; white-space: nowrap;
+}
+.rt-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-variant-numeric: tabular-nums; }
+.rt-table caption {
+  text-align: left; color: var(--muted); font-size: .78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em; padding-bottom: .35rem;
+}
+.rt-table th, .rt-table td { border: 1px solid var(--border); padding: .35rem .6rem; text-align: left; }
+.rt-table th { background: var(--surface2); font-weight: 800; width: 6.5rem; white-space: nowrap; }
+/* worksheet grids */
+.rt-sheet-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem .9rem; }
+.rt-sheet-grid.wide { grid-template-columns: repeat(2, 1fr); }
+.rt-share-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem .9rem; }
+.rt-sheet-grid .item, .rt-share-grid .item {
+  break-inside: avoid; page-break-inside: avoid;
+  border: 1px solid #ccc; border-radius: 8px; padding: .55rem .6rem;
+}
+.rt-sheet-grid .item .q, .rt-share-grid .item .q { font-weight: 800; font-size: .95rem; }
+.rt-sheet-grid .item .body, .rt-share-grid .item .body {
+  font-size: 1.02rem; font-variant-numeric: tabular-nums; margin: .2rem 0 .45rem;
+}
+.rt-share-grid .item .body { font-size: .95rem; }
+.rt-sheet-grid .item .lbl, .rt-share-grid .item .lbl { font-size: .9rem; letter-spacing: .02em; }
+.rt-anskey { display: grid; grid-template-columns: repeat(2, 1fr); gap: .25rem 1.4rem; font-size: .88rem; }
+.rt-anskey span { color: #555; }
+
+@media (max-width: 640px) {
+  .rt-sheet-grid, .rt-sheet-grid.wide, .rt-share-grid { grid-template-columns: repeat(2, 1fr); }
+  .rt-anskey { grid-template-columns: 1fr; }
+  .rt-table th { width: 5rem; }
+}
+
 /* ---------- animations ---------- */
 @keyframes pop { 0% { transform: scale(.6); } 70% { transform: scale(1.08); } 100% { transform: scale(1); } }
 @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
