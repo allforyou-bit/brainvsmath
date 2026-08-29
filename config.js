@@ -10,7 +10,7 @@
    ============================================================ */
 window.BVM_CONFIG = {
   siteUrl: "https://brainvsmath.com",
-  adsenseClient: "",
+  adsenseClient: "ca-pub-6709396576574623",
   cfAnalyticsToken: "",
   /* Shop checkout links — paste the product URLs from your store
      (Payhip/Gumroad/Ko-fi) and the buttons on /shop/ go live. */

@@ -1,4 +1,7 @@
 # ads.txt — Brain vs Math
-# This file activates after Google AdSense approval.
-# Replace the line below with the real one from AdSense (Account > ads.txt):
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# Authorized digital sellers (IAB Tech Lab ads.txt v1.0.2).
+# Publisher id is the shared KAYMEDIA AdSense account — the same record
+# part107quiz.com already serves. Declaring it before approval is valid and
+# harmless: no "unauthorized inventory" warning, and no lost serving window
+# on the day brainvsmath.com is approved.
+google.com, pub-6709396576574623, DIRECT, f08c47fec0942fa0
