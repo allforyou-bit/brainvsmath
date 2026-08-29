@@ -50,7 +50,7 @@
       <p class="muted" style="margin-bottom:.8rem">
         60 no-prep printable worksheets with complete answer keys: times tables 2–12,
         mixed practice, division facts, 2-digit stretch and timed speed drills. Grades 3–5.
-        Normally $5.99 — yours free.
+        Free to download, free to print.
       </p>
 
       <!-- lead capture (MailerLite, config-gated) -->
@@ -59,11 +59,15 @@
         <div id="leadFallback" class="hidden">
           <a class="btn primary" id="directDownload" href="../assets/downloads/multiplication-mastery-pack.pdf" download
              style="font-size:1.05rem;padding:.75rem 1.6rem">⬇ Download the free pack (PDF)</a>
-          <p class="muted" id="fallbackNote" style="font-size:.85rem;margin-top:.5rem"></p>
         </div>
       </div>
       <p class="muted" style="font-size:.8rem;margin-top:.7rem">
-        Instant PDF · US Letter · print unlimited copies for your class or kids · no spam, unsubscribe anytime.
+        Instant PDF · US Letter · print unlimited copies for your class or kids.
+      </p>
+      <p class="muted" style="font-size:.8rem;margin-top:.4rem">
+        Signing up is optional — the pack downloads either way. If you do, we collect your email
+        address and nothing else, our email provider MailerLite stores it, and every email has a
+        one-click unsubscribe link. Details in the <a href="../privacy/">privacy policy</a>.
       </p>
     </div>
   </section>
@@ -111,7 +115,6 @@
   var cfg = (window.BVM_CONFIG && window.BVM_CONFIG.email) || {};
   var mount = document.getElementById("mlMount");
   var fallback = document.getElementById("leadFallback");
-  var note = document.getElementById("fallbackNote");
 
   if (cfg.mlAccount && cfg.mlForm) {
     /* MailerLite universal embed (account id + form code are public embed IDs) */
@@ -132,9 +135,8 @@
     alt.innerHTML = 'Prefer not to sign up? <a href="../assets/downloads/multiplication-mastery-pack.pdf" download>Download the pack directly</a>.';
     mount.appendChild(alt);
   } else {
-    /* not connected yet — page still delivers the free pack */
+    /* no email provider configured — page still delivers the free pack */
     fallback.classList.remove("hidden");
-    note.textContent = "Email signup opens soon — grab the pack now.";
   }
 })();
 </script>
