@@ -1,0 +1,16 @@
+# core.autocrlf is true on this machine and git guesses binary-vs-text from the
+# first 8000 bytes. assets/downloads/multiplication-mastery-pack.pdf contains no
+# NUL byte anywhere, so git classified it as TEXT (`i/lf w/lf`, unlike every other
+# binary here) and a fresh Windows clone would rewrite its line endings and check
+# out a corrupt file — while every check on this machine kept passing, because the
+# local copy was never converted. That PDF is the site's main free offer.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.zip   binary
+*.woff  binary
+*.woff2 binary
