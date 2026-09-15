@@ -3,8 +3,7 @@
 # sending domain, via the official Porkbun API.
 #
 # WHY: without these records MailerLite refuses to send from
-# hello@brainvsmath.com, so the welcome automation currently sends
-# from the verified hello@redsealquiz.ca (different brand).
+# hello@brainvsmath.com.
 #
 # WHAT IT DOES (additive + one in-place edit, never deletes):
 #   1. edits the single root SPF TXT  -> adds include:_spf.mlsend.com
