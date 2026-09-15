@@ -4,13 +4,15 @@
    ------------------------------------------------------------
    siteUrl          : canonical origin (no trailing slash)
    adsenseClient    : Google AdSense publisher id, e.g. "ca-pub-1234567890123456".
-                      Leave "" until AdSense approves the site. When set, Auto Ads
-                      load on every page automatically. Also update /ads.txt!
+                      Leave "" until AdSense shows the site as Ready. The review
+                      itself does not need this script: AdSense verifies a site
+                      through ads.txt (already live) or a meta tag. When set, Auto
+                      Ads load on every page, including the games.
    cfAnalyticsToken : Cloudflare Web Analytics token (free, cookieless). Optional.
    ============================================================ */
 window.BVM_CONFIG = {
   siteUrl: "https://brainvsmath.com",
-  adsenseClient: "ca-pub-6709396576574623",
+  adsenseClient: "",
   cfAnalyticsToken: "",
   /* Shop checkout links — paste the product URLs from your store
      (Payhip/Gumroad/Ko-fi) and the buttons on /shop/ go live. */
@@ -27,7 +29,7 @@ window.BVM_CONFIG = {
      goes live and captures emails. Until then, the page still gives the
      free download so it's useful immediately. */
   email: {
-    mlAccount: "2520403",
-    mlForm: "Qn3oRk"
+    mlAccount: "",
+    mlForm: ""
   }
 };
