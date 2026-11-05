@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#0b1220">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Brain vs Math">
-<meta property="og:title" content="The spider and the fly: the shortest path crosses five walls">
+<meta property="og:title" content="The spider and the fly: the shortest path crosses five faces of the room">
 <meta property="og:description" content="Unfold the room flat and the shortest path is a straight line of 40, not 42.">
 <meta property="og:url" content="https://brainvsmath.com/puzzles/spider-and-fly-problem/">
 <meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
@@ -82,7 +82,7 @@
       <tbody id="spRows"></tbody>
     </table>
     <label class="pz-label" for="spLen">Room length: <span id="spLenOut">30</span></label>
-    <input id="spLen" type="range" min="10" max="40" step="1" value="30" style="width:100%;min-height:44px">
+    <input id="spLen" type="range" min="10" max="40" step="1" value="30" autocomplete="off" style="width:100%;min-height:44px">
     <p class="muted" style="font-size:.85rem;margin:.2rem 0 0">The room stays 12 wide and 12 high. Watch which of the four unfoldings gives the shortest path as the room gets longer.</p>
   </section>
   <p class="pz-embed-bar"><a href="https://brainvsmath.com/puzzles/spider-and-fly-problem/">The spider and the fly · Brain vs Math</a></p>
@@ -92,7 +92,7 @@
       <summary>The answer: 40</summary>
       <p>The obvious route goes up 1 to the ceiling, straight across 30, and down 11: 42. Going round a side wall instead is longer, about 43.17.</p>
       <p>Now unfold the room so that the end wall, the ceiling, a side wall, the floor and the other end wall lie flat in a chain. On that flat sheet the spider and the fly are 32 apart one way and 24 apart the other, so the straight line between them is the long side of a 24-32-40 right triangle: <strong>40</strong>. Fold the walls back up and that line becomes a path that crosses five of the six faces, shorter than the obvious one.</p>
-      <p>This is a classic puzzle by Henry Dudeney. The trick works for any path on the surface of a box: on a flat unfolding the shortest route is a straight line, so the question becomes which unfolding brings the two points closest.</p>
+      <p>This is a classic puzzle by Henry Dudeney. The trick works for any path on the surface of a box: on a flat unfolding the shortest route is a straight line, as long as that line stays on the unfolded walls, so the question becomes which unfolding brings the two points closest.</p>
     </details>
 
     <h2>Why a longer room changes the answer</h2>
@@ -101,13 +101,13 @@
     <h2>Watch it in under a minute</h2>
     <div class="pz-video">
       <div class="pz-video-box" data-yt="XNTGv8Ch66M" data-title="Unfold a Room Flat and the Spider's Shortest Path to the Fly Crosses Five Walls">
-        <img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="Video still: the unfolded room with the straight path from the spider to the fly" width="360" height="640" loading="lazy">
+        <img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="Video still: the room unfolded flat, with the straight path of 40 from the spider to the fly beside the obvious route of 42" width="360" height="640" loading="lazy">
         <button class="pz-play" type="button" aria-label="Play the video"><span class="tri" aria-hidden="true"></span>Play</button>
       </div>
       <div>
         <p class="muted">The video plays from YouTube when you press play, and not before.</p>
         <p><a class="btn primary" href="https://www.youtube.com/@brainversusmath?sub_confirmation=1" rel="noopener">Subscribe to Brain vs Math on YouTube</a></p>
-        <p class="muted">New visual proofs every day, each a question with a surprising count, length or shape.</p>
+        <p class="muted">More visual proofs, one idea at a time.</p>
       </div>
     </div>
 
@@ -131,7 +131,7 @@
     <div class="pz-embed">
       <p class="muted">Paste this code into a class page or a learning platform to show the unfolding tool there. It is free to use for teaching, with the link back kept.</p>
       <label class="pz-label" for="embedCode">Embed code</label>
-      <textarea id="embedCode" readonly data-name="The spider and the fly" data-height="1000"></textarea>
+      <textarea id="embedCode" readonly data-name="The spider and the fly" data-height="1250"></textarea>
       <button class="btn" id="embedCopy" type="button">Copy the code</button>
     </div>
 

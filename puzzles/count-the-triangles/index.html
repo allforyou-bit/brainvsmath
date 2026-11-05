@@ -80,7 +80,7 @@
     <div class="pz-row" role="group" aria-label="Move to another triangle">
       <button class="btn" id="trPrev" type="button">Back</button>
       <button class="btn primary" id="trNext" type="button">Next triangle</button>
-      <button class="btn ghost" id="trPlay" type="button" aria-pressed="false">Play</button>
+      <button class="btn ghost" id="trPlay" type="button">Play</button>
     </div>
     <p class="pz-status" id="trStatus" aria-live="polite"></p>
     <p class="muted" style="font-size:.85rem;margin:.2rem 0 0">Pointing up: solid outline. Pointing down: dashed outline.</p>
@@ -102,7 +102,7 @@
     </details>
 
     <h2>The easy mistake</h2>
-    <p class="muted">Most counts miss the triangles that point down. In the 4-part picture there are 7 of them, and the size 2 one in the middle is the one people overlook, because its corners sit on the middle of the sides rather than on the corners of the big triangle.</p>
+    <p class="muted">Most counts stop at the 16 small triangles and miss the bigger ones: 10 more pointing up (6 of size 2, 3 of size 3 and the whole triangle) and one pointing down. That size 2 triangle in the middle is the easiest to overlook, because it points down and its corners sit on the middle of the sides rather than on the corners of the big triangle.</p>
 
     <h2>Watch it in under a minute</h2>
     <div class="pz-video">
@@ -113,7 +113,7 @@
       <div>
         <p class="muted">The video plays from YouTube when you press play, and not before.</p>
         <p><a class="btn primary" href="https://www.youtube.com/@brainversusmath?sub_confirmation=1" rel="noopener">Subscribe to Brain vs Math on YouTube</a></p>
-        <p class="muted">New visual proofs every day, each a question with a surprising count, length or shape.</p>
+        <p class="muted">More visual proofs, one idea at a time.</p>
       </div>
     </div>
 
@@ -121,7 +121,7 @@
     <div class="faq">
       <details>
         <summary>Why isn't the answer 16?</summary>
-        <p>16 counts only the smallest triangles. Groups of small triangles form bigger ones: 6 of size 2 and 3 of size 3 pointing up, one big one, and 7 pointing down.</p>
+        <p>16 counts only the smallest triangles, 10 pointing up and 6 pointing down. Groups of small triangles form bigger ones: 6 of size 2 and 3 of size 3 pointing up, the whole triangle, and one of size 2 pointing down: 16 + 6 + 3 + 1 + 1 = 27.</p>
       </details>
       <details>
         <summary>How many triangles are there with 5 parts on each side?</summary>
@@ -137,14 +137,14 @@
     <div class="pz-embed">
       <p class="muted">Paste this code into a class page or a learning platform to show the counting grid there. It is free to use for teaching, with the link back kept.</p>
       <label class="pz-label" for="embedCode">Embed code</label>
-      <textarea id="embedCode" readonly data-name="How many triangles are in this picture?" data-height="900"></textarea>
+      <textarea id="embedCode" readonly data-name="How many triangles are in this picture?" data-height="1500"></textarea>
       <button class="btn" id="embedCopy" type="button">Copy the code</button>
     </div>
 
     <h2>More puzzles</h2>
     <div class="pz-list">
       <a class="mini-card" href="../how-many-squares-on-a-chessboard/"><img src="../../assets/img/puzzles/how-many-squares-on-a-chessboard.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>How many squares on a chessboard?</strong><br><span class="muted">Not 64, but 204.</span></span></a>
-      <a class="mini-card" href="../spider-and-fly-problem/"><img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>The spider and the fly</strong><br><span class="muted">The shortest path crosses five walls.</span></span></a>
+      <a class="mini-card" href="../spider-and-fly-problem/"><img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>The spider and the fly</strong><br><span class="muted">The shortest path crosses five faces of the room.</span></span></a>
       <a class="mini-card" href="../"><span style="grid-column:1 / -1"><strong>All puzzles</strong></span></a>
     </div>
   </section>

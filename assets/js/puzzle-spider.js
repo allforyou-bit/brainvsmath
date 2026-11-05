@@ -17,7 +17,8 @@
   var tbody = document.getElementById("spRows");
   if (!svg) return;
 
-  var W = 12, H = 12, A = 1, B = 1, L = 30, route = 4;
+  var W = 12, H = 12, A = 1, B = 1, L = parseInt(lenIn.value, 10) || 30, route = 4;
+  lenOut.textContent = String(L);
 
   function nets(L) {
     var S = [-A, W / 2];

@@ -101,12 +101,12 @@
   function stop() {
     if (timer) { clearInterval(timer); timer = null; }
     btnPlay.textContent = "Play";
-    btnPlay.setAttribute("aria-pressed", "false");
+    status.setAttribute("aria-live", "polite");
   }
   function play() {
     if (timer) { stop(); return; }
     btnPlay.textContent = "Pause";
-    btnPlay.setAttribute("aria-pressed", "true");
+    status.setAttribute("aria-live", "off");
     timer = setInterval(function () { step(1); }, 600);
   }
 

@@ -69,6 +69,8 @@
         f.allowFullscreen = true;
         box.innerHTML = "";
         box.appendChild(f);
+        f.setAttribute("tabindex", "-1");
+        f.focus();
       });
     });
 

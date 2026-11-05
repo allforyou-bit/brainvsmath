@@ -39,6 +39,7 @@
     for (var cc = 0; cc < col; cc++) {
       P.el("rect", { x: cc * CELL + 3, y: row * CELL + 3, width: k * CELL - 6, height: k * CELL - 6, "class": "pz-hl-ghost" }, g);
     }
+    P.el("rect", { x: col * CELL + 2, y: row * CELL + 2, width: k * CELL - 4, height: k * CELL - 4, "class": "pz-hl-under" }, g);
     P.el("rect", { x: col * CELL + 2, y: row * CELL + 2, width: k * CELL - 4, height: k * CELL - 4, "class": "pz-hl" }, g);
     svg.setAttribute("aria-label", n + " by " + n + " board. A " + k + " by " + k + " square in row " + (row + 1) +
       ", column " + (col + 1) + ": position " + (pos + 1) + " of " + count(n, k) + ".");
@@ -77,12 +78,12 @@
   function stop() {
     if (timer) { clearInterval(timer); timer = null; }
     btnPlay.textContent = "Play";
-    btnPlay.setAttribute("aria-pressed", "false");
+    status.setAttribute("aria-live", "polite");
   }
   function play() {
     if (timer) { stop(); return; }
     btnPlay.textContent = "Pause";
-    btnPlay.setAttribute("aria-pressed", "true");
+    status.setAttribute("aria-live", "off");
     timer = setInterval(function () { step(1); }, 450);
   }
 

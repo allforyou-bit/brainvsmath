@@ -1,7 +1,12 @@
 /* ============================================================
    Brain vs Math — puzzle pages (/puzzles/). Loaded after main.css.
-   Every control is 44 px or more; state is never shown by colour alone.
+   Every puzzle control (chips, buttons, slider, play, copy) is 44 px or more, and so are the FAQ rows here;
+   state is never shown by colour alone.
    ============================================================ */
+
+:root { --pz-gold: #fbbf24; --pz-up: #22d3ee; --pz-down: #f472b6; --pz-ring: #22d3ee; }
+[data-theme="light"] { --pz-gold: #b45309; --pz-up: #0e7490; --pz-down: #be185d; --pz-ring: #0e7490; }
+@media (prefers-color-scheme: light) { :root:not([data-theme]) { --pz-gold: #b45309; --pz-up: #0e7490; --pz-down: #be185d; --pz-ring: #0e7490; } }
 
 .pz-q { font-size: clamp(1.45rem, 4.6vw, 2rem); line-height: 1.25; margin: .2rem 0 .6rem; }
 .pz-lede { font-size: 1.05rem; }
@@ -10,7 +15,8 @@
 .pz-row { display: flex; flex-wrap: wrap; gap: .45rem; margin: .7rem 0; }
 .pz-row .chip, .pz-row .btn { min-height: 44px; min-width: 44px; }
 .pz-label { display: block; font-weight: 700; font-size: .9rem; color: var(--muted); margin: .9rem 0 .1rem; }
-.chip[aria-pressed="true"] { border-color: var(--cyan); color: var(--text); box-shadow: 0 0 0 2px var(--cyan) inset; font-weight: 800; }
+.chip[aria-pressed="true"] { border-color: var(--pz-ring); color: var(--text); box-shadow: 0 0 0 2px var(--pz-ring) inset; font-weight: 800; }
+.chip[aria-pressed="true"]::before { content: "\2713\00a0"; }
 .pz-status { font-weight: 700; min-height: 1.6em; margin: .5rem 0 0; }
 .pz-total { font-size: 1.5rem; font-weight: 800; color: var(--cyan); }
 
@@ -19,17 +25,18 @@
 .pz-stage svg { width: 100%; max-width: 460px; height: auto; touch-action: manipulation; }
 .pz-cell-a { fill: #e9edf4; }
 .pz-cell-b { fill: #6b7a92; }
-.pz-hl { fill: rgba(251, 191, 36, .28); stroke: var(--gold); stroke-width: 3.5; }
-.pz-hl-ghost { fill: none; stroke: var(--gold); stroke-width: 1.2; stroke-dasharray: 4 3; opacity: .55; }
+.pz-hl { fill: rgba(251, 191, 36, .28); stroke: #fbbf24; stroke-width: 3.5; }
+.pz-hl-under { fill: none; stroke: #111827; stroke-width: 8; }
+.pz-hl-ghost { fill: none; stroke: #111827; stroke-width: 1.6; stroke-dasharray: 4 3; opacity: .8; }
 .pz-grid-line { stroke: var(--muted); stroke-width: 1.4; fill: none; }
-.pz-tri-up { fill: rgba(34, 211, 238, .30); stroke: var(--cyan); stroke-width: 3; }
-.pz-tri-down { fill: rgba(244, 114, 182, .30); stroke: var(--pink); stroke-width: 3; stroke-dasharray: 7 4; }
+.pz-tri-up { fill: rgba(34, 211, 238, .30); stroke: var(--pz-up); stroke-width: 3.5; }
+.pz-tri-down { fill: rgba(244, 114, 182, .30); stroke: var(--pz-down); stroke-width: 3.5; stroke-dasharray: 7 4; }
 .pz-face { fill: var(--surface2); stroke: var(--muted); stroke-width: 1.2; }
 .pz-face-used { fill: color-mix(in srgb, var(--surface2) 70%, var(--cyan) 18%); }
 .pz-face-label { fill: var(--text); font-size: 15px; font-family: var(--font); }
 .pz-edge { stroke: var(--muted); stroke-width: 1.4; fill: none; }
 .pz-edge-back { stroke: var(--muted); stroke-width: 1; fill: none; stroke-dasharray: 4 3; opacity: .7; }
-.pz-path { stroke: var(--gold); stroke-width: 3.5; fill: none; stroke-linecap: round; }
+.pz-path { stroke: var(--pz-gold); stroke-width: 4; fill: none; stroke-linecap: round; }
 .pz-dot-s { fill: var(--pink); stroke: #071018; stroke-width: 1.5; }
 .pz-dot-f { fill: var(--cyan); stroke: #071018; stroke-width: 1.5; }
 .pz-dot-label { font-size: 15px; font-weight: 800; fill: var(--text); font-family: var(--font); }
@@ -42,6 +49,7 @@
 .pz-table tfoot td { font-weight: 800; }
 
 /* answer reveal */
+.seo-block .faq summary { min-height: 44px; display: flex; align-items: center; }
 .pz-reveal summary { min-height: 44px; display: flex; align-items: center; font-weight: 800; cursor: pointer; }
 
 /* the video: a local poster until the visitor presses play (no request to YouTube before that) */
