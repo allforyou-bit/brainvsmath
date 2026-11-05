@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Many Triangles Are There? Count Them One by One: 27 | Brain vs Math</title>
+<meta name="description" content="A triangle with each side cut into 4 parts shows 16 small triangles, but it holds 27. Count the ones pointing up and pointing down yourself, size by size, and see the formula.">
+<link rel="canonical" href="https://brainvsmath.com/puzzles/count-the-triangles/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="How many triangles are in this picture? Not 16.">
+<meta property="og:description" content="Count the triangles pointing up and pointing down, one at a time.">
+<meta property="og:url" content="https://brainvsmath.com/puzzles/count-the-triangles/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}if(/[?&]embed=1(&|$)/.test(location.search))document.documentElement.classList.add("pz-embedded");</script>
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/puzzles.css">
+<script src="../../config.js"></script>
+<script src="../../assets/js/core.js" defer></script>
+<script src="../../assets/js/puzzle-common.js" defer></script>
+<script src="../../assets/js/puzzle-triangles.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Brain vs Math", "item": "https://brainvsmath.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Puzzles", "item": "https://brainvsmath.com/puzzles/" },
+        { "@type": "ListItem", "position": 3, "name": "How many triangles are there?", "item": "https://brainvsmath.com/puzzles/count-the-triangles/" }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Split a Triangle Into 16 Small Ones and It Holds 27 Triangles",
+      "description": "Pointing up: 10 + 6 + 3 + 1 = 20. Pointing down: 6 + 1 = 7. All together 27.",
+      "thumbnailUrl": "https://brainvsmath.com/assets/img/puzzles/count-the-triangles.jpg",
+      "uploadDate": "2026-10-31T15:00:00-04:00",
+      "embedUrl": "https://www.youtube.com/embed/fzveTXJx_u8"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../../">Daily</a>
+      <a href="../" aria-current="page">Puzzles</a>
+      <a href="../../sprint/">Sprint</a>
+      <a href="../../times-tables/">Times Tables</a>
+      <a href="../../worksheets/">Worksheets</a>
+      <a href="../../shop/">Printables</a>
+      <a href="../../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+  <div class="kicker pz-page-only">Puzzle · counting</div>
+  <h1 class="pz-q">How many triangles are in this picture?</h1>
+  <p class="pz-lede muted pz-page-only">Cut each side of a triangle into 4 equal parts and draw the lines across. You can see 16 small triangles, but bigger triangles are made of the small ones, and some of them point down. Count every one below.</p>
+
+  <section class="card" aria-label="Count the triangles">
+    <span class="pz-label" id="trNLabel">Each side cut into</span>
+    <div class="pz-row" id="trN" role="group" aria-labelledby="trNLabel"></div>
+    <span class="pz-label" id="trGroupsLabel">Triangles to count (how many in brackets)</span>
+    <div class="pz-row" id="trGroups" role="group" aria-labelledby="trGroupsLabel"></div>
+    <div class="pz-stage"><svg id="trGrid" role="img" aria-label="Triangle grid"></svg></div>
+    <div class="pz-row" role="group" aria-label="Move to another triangle">
+      <button class="btn" id="trPrev" type="button">Back</button>
+      <button class="btn primary" id="trNext" type="button">Next triangle</button>
+      <button class="btn ghost" id="trPlay" type="button" aria-pressed="false">Play</button>
+    </div>
+    <p class="pz-status" id="trStatus" aria-live="polite"></p>
+    <p class="muted" style="font-size:.85rem;margin:.2rem 0 0">Pointing up: solid outline. Pointing down: dashed outline.</p>
+    <table class="pz-table">
+      <thead><tr><th>Group</th><th>How many</th><th>Running total</th></tr></thead>
+      <tbody id="trRows"></tbody>
+      <tfoot id="trFoot"></tfoot>
+    </table>
+  </section>
+  <p class="pz-embed-bar"><a href="https://brainvsmath.com/puzzles/count-the-triangles/">How many triangles are in this picture? · Brain vs Math</a></p>
+
+  <section class="seo-block pz-page-only">
+    <details class="card pz-reveal" open>
+      <summary>The answer: 27</summary>
+      <p>Pointing up there are 10 small triangles, 6 made of four small ones, 3 made of nine, and the whole triangle: 10 + 6 + 3 + 1 = 20.</p>
+      <p>Pointing down there are 6 small triangles and one bigger one hiding in the middle, made of four small ones: 6 + 1 = 7.</p>
+      <p>All together: 20 + 7 = <strong>27</strong>, counting only triangles whose sides lie on the drawn lines.</p>
+      <p>For a side cut into n parts, the count is n(n + 2)(2n + 1) ÷ 8, rounded down: 1, 5, 13, 27, 48, 78, 118 for n = 1 to 7. For an even n the formula comes out whole; for an odd n it lands exactly one eighth above a whole number, which the rounding removes.</p>
+    </details>
+
+    <h2>The easy mistake</h2>
+    <p class="muted">Most counts miss the triangles that point down. In the 4-part picture there are 7 of them, and the size 2 one in the middle is the one people overlook, because its corners sit on the middle of the sides rather than on the corners of the big triangle.</p>
+
+    <h2>Watch it in under a minute</h2>
+    <div class="pz-video">
+      <div class="pz-video-box" data-yt="fzveTXJx_u8" data-title="Split a Triangle Into 16 Small Ones and It Holds 27 Triangles">
+        <img src="../../assets/img/puzzles/count-the-triangles.jpg" alt="Video still: a triangle grid with triangles being counted" width="360" height="640" loading="lazy">
+        <button class="pz-play" type="button" aria-label="Play the video"><span class="tri" aria-hidden="true"></span>Play</button>
+      </div>
+      <div>
+        <p class="muted">The video plays from YouTube when you press play, and not before.</p>
+        <p><a class="btn primary" href="https://www.youtube.com/@brainversusmath?sub_confirmation=1" rel="noopener">Subscribe to Brain vs Math on YouTube</a></p>
+        <p class="muted">New visual proofs every day, each a question with a surprising count, length or shape.</p>
+      </div>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Why isn't the answer 16?</summary>
+        <p>16 counts only the smallest triangles. Groups of small triangles form bigger ones: 6 of size 2 and 3 of size 3 pointing up, one big one, and 7 pointing down.</p>
+      </details>
+      <details>
+        <summary>How many triangles are there with 5 parts on each side?</summary>
+        <p>5 × 7 × 11 ÷ 8 = 48.125, rounded down to 48: 35 pointing up and 13 pointing down. Pick 5 parts above to step through them.</p>
+      </details>
+      <details>
+        <summary>Do the triangles have to use the drawn lines?</summary>
+        <p>Yes. Every triangle counted here has all three sides on lines of the picture.</p>
+      </details>
+    </div>
+
+    <h2>Use this puzzle in a class</h2>
+    <div class="pz-embed">
+      <p class="muted">Paste this code into a class page or a learning platform to show the counting grid there. It is free to use for teaching, with the link back kept.</p>
+      <label class="pz-label" for="embedCode">Embed code</label>
+      <textarea id="embedCode" readonly data-name="How many triangles are in this picture?" data-height="900"></textarea>
+      <button class="btn" id="embedCopy" type="button">Copy the code</button>
+    </div>
+
+    <h2>More puzzles</h2>
+    <div class="pz-list">
+      <a class="mini-card" href="../how-many-squares-on-a-chessboard/"><img src="../../assets/img/puzzles/how-many-squares-on-a-chessboard.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>How many squares on a chessboard?</strong><br><span class="muted">Not 64, but 204.</span></span></a>
+      <a class="mini-card" href="../spider-and-fly-problem/"><img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>The spider and the fly</strong><br><span class="muted">The shortest path crosses five walls.</span></span></a>
+      <a class="mini-card" href="../"><span style="grid-column:1 / -1"><strong>All puzzles</strong></span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../../about/">About</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

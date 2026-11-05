@@ -1,0 +1,72 @@
+/* ============================================================
+   Brain vs Math — puzzle pages (/puzzles/). Loaded after main.css.
+   Every control is 44 px or more; state is never shown by colour alone.
+   ============================================================ */
+
+.pz-q { font-size: clamp(1.45rem, 4.6vw, 2rem); line-height: 1.25; margin: .2rem 0 .6rem; }
+.pz-lede { font-size: 1.05rem; }
+
+/* controls */
+.pz-row { display: flex; flex-wrap: wrap; gap: .45rem; margin: .7rem 0; }
+.pz-row .chip, .pz-row .btn { min-height: 44px; min-width: 44px; }
+.pz-label { display: block; font-weight: 700; font-size: .9rem; color: var(--muted); margin: .9rem 0 .1rem; }
+.chip[aria-pressed="true"] { border-color: var(--cyan); color: var(--text); box-shadow: 0 0 0 2px var(--cyan) inset; font-weight: 800; }
+.pz-status { font-weight: 700; min-height: 1.6em; margin: .5rem 0 0; }
+.pz-total { font-size: 1.5rem; font-weight: 800; color: var(--cyan); }
+
+/* the drawing area */
+.pz-stage { display: flex; justify-content: center; margin: .8rem 0; }
+.pz-stage svg { width: 100%; max-width: 460px; height: auto; touch-action: manipulation; }
+.pz-cell-a { fill: #e9edf4; }
+.pz-cell-b { fill: #6b7a92; }
+.pz-hl { fill: rgba(251, 191, 36, .28); stroke: var(--gold); stroke-width: 3.5; }
+.pz-hl-ghost { fill: none; stroke: var(--gold); stroke-width: 1.2; stroke-dasharray: 4 3; opacity: .55; }
+.pz-grid-line { stroke: var(--muted); stroke-width: 1.4; fill: none; }
+.pz-tri-up { fill: rgba(34, 211, 238, .30); stroke: var(--cyan); stroke-width: 3; }
+.pz-tri-down { fill: rgba(244, 114, 182, .30); stroke: var(--pink); stroke-width: 3; stroke-dasharray: 7 4; }
+.pz-face { fill: var(--surface2); stroke: var(--muted); stroke-width: 1.2; }
+.pz-face-used { fill: color-mix(in srgb, var(--surface2) 70%, var(--cyan) 18%); }
+.pz-face-label { fill: var(--text); font-size: 15px; font-family: var(--font); }
+.pz-edge { stroke: var(--muted); stroke-width: 1.4; fill: none; }
+.pz-edge-back { stroke: var(--muted); stroke-width: 1; fill: none; stroke-dasharray: 4 3; opacity: .7; }
+.pz-path { stroke: var(--gold); stroke-width: 3.5; fill: none; stroke-linecap: round; }
+.pz-dot-s { fill: var(--pink); stroke: #071018; stroke-width: 1.5; }
+.pz-dot-f { fill: var(--cyan); stroke: #071018; stroke-width: 1.5; }
+.pz-dot-label { font-size: 15px; font-weight: 800; fill: var(--text); font-family: var(--font); }
+
+/* tables */
+.pz-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; margin: .6rem 0; }
+.pz-table th, .pz-table td { padding: .45rem .55rem; border-bottom: 1px solid var(--border); text-align: left; }
+.pz-table tr.pz-on td { font-weight: 800; color: var(--text); }
+.pz-table tr.pz-on td:first-child::before { content: "\25B6\00a0"; color: var(--gold); }
+.pz-table tfoot td { font-weight: 800; }
+
+/* answer reveal */
+.pz-reveal summary { min-height: 44px; display: flex; align-items: center; font-weight: 800; cursor: pointer; }
+
+/* the video: a local poster until the visitor presses play (no request to YouTube before that) */
+.pz-video { display: grid; gap: .8rem; grid-template-columns: minmax(0, 220px) 1fr; align-items: center; }
+.pz-video-box { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: #000; }
+.pz-video-box img, .pz-video-box iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.pz-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.25); border: 0; cursor: pointer; color: #fff; font-weight: 800; font-size: 1rem; gap: .5rem; }
+.pz-play span.tri { width: 0; height: 0; border-left: 22px solid #fff; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+.pz-video .btn, .seo-block > p > .btn { min-height: 44px; }
+@media (max-width: 560px) { .pz-video { grid-template-columns: 1fr; } .pz-video-box { max-width: 260px; margin-inline: auto; } }
+
+/* embed code */
+.pz-embed textarea { width: 100%; min-height: 5.5rem; font-family: var(--mono); font-size: .8rem; background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: .6rem; }
+.pz-embed .btn { min-height: 44px; margin-top: .4rem; }
+
+/* puzzle list */
+.pz-list { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 1rem; }
+.pz-list a { display: grid; grid-template-columns: 72px 1fr; gap: .8rem; align-items: center; min-height: 44px; }
+.pz-list img { width: 72px; height: 128px; object-fit: cover; border-radius: 10px; }
+
+/* embed mode (?embed=1): only the puzzle and a link back */
+.pz-embed-bar { display: none; }
+html.pz-embedded .site-header, html.pz-embedded .site-footer, html.pz-embedded .pz-page-only { display: none !important; }
+html.pz-embedded main { margin-top: .6rem !important; }
+html.pz-embedded .pz-embed-bar { display: block; text-align: center; font-size: .85rem; margin: .6rem 0 .4rem; }
+html.pz-embedded .pz-embed-bar a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 .4rem; }
+
+@media (prefers-reduced-motion: reduce) { .pz-stage * { transition: none !important; } }

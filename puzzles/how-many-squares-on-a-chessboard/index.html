@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Many Squares Are on a Chessboard? Count Them: 204 | Brain vs Math</title>
+<meta name="description" content="Count every square on a chessboard yourself: 64 small ones, 49 of size 2 by 2, 36 of size 3 by 3, down to one 8 by 8. Step through each size and see why the total is 204.">
+<link rel="canonical" href="https://brainvsmath.com/puzzles/how-many-squares-on-a-chessboard/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="How many squares are on a chessboard? Not 64.">
+<meta property="og:description" content="Count the 2 by 2, 3 by 3 and bigger squares too, one position at a time.">
+<meta property="og:url" content="https://brainvsmath.com/puzzles/how-many-squares-on-a-chessboard/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}if(/[?&]embed=1(&|$)/.test(location.search))document.documentElement.classList.add("pz-embedded");</script>
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/puzzles.css">
+<script src="../../config.js"></script>
+<script src="../../assets/js/core.js" defer></script>
+<script src="../../assets/js/puzzle-common.js" defer></script>
+<script src="../../assets/js/puzzle-chessboard.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Brain vs Math", "item": "https://brainvsmath.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Puzzles", "item": "https://brainvsmath.com/puzzles/" },
+        { "@type": "ListItem", "position": 3, "name": "How many squares are on a chessboard?", "item": "https://brainvsmath.com/puzzles/how-many-squares-on-a-chessboard/" }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Count Every Square on a Chessboard and You Get 204, Not 64",
+      "description": "Squares of every size on an 8 by 8 board: 64 + 49 + 36 + 25 + 16 + 9 + 4 + 1 = 204.",
+      "thumbnailUrl": "https://brainvsmath.com/assets/img/puzzles/how-many-squares-on-a-chessboard.jpg",
+      "uploadDate": "2026-10-24T09:00:00-04:00",
+      "embedUrl": "https://www.youtube.com/embed/0d9EzYvHx7Q"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../../">Daily</a>
+      <a href="../" aria-current="page">Puzzles</a>
+      <a href="../../sprint/">Sprint</a>
+      <a href="../../times-tables/">Times Tables</a>
+      <a href="../../worksheets/">Worksheets</a>
+      <a href="../../shop/">Printables</a>
+      <a href="../../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+  <div class="kicker pz-page-only">Puzzle · counting</div>
+  <h1 class="pz-q">How many squares are on a chessboard?</h1>
+  <p class="pz-lede muted pz-page-only">Most people say 64. Those are only the smallest ones. A block of 2 by 2 cells is a square too, and so is 3 by 3, all the way up to the whole board. Count them yourself below.</p>
+
+  <section class="card" aria-label="Count the squares">
+    <span class="pz-label" id="cbNLabel">Board</span>
+    <div class="pz-row" id="cbN" role="group" aria-labelledby="cbNLabel"></div>
+    <span class="pz-label" id="cbSizesLabel">Square size to count</span>
+    <div class="pz-row" id="cbSizes" role="group" aria-labelledby="cbSizesLabel"></div>
+    <div class="pz-stage"><svg id="cbBoard" role="img" aria-label="Chessboard"></svg></div>
+    <div class="pz-row" role="group" aria-label="Move the square">
+      <button class="btn" id="cbPrev" type="button">Back</button>
+      <button class="btn primary" id="cbNext" type="button">Next position</button>
+      <button class="btn ghost" id="cbPlay" type="button" aria-pressed="false">Play</button>
+    </div>
+    <p class="pz-status" id="cbStatus" aria-live="polite"></p>
+    <table class="pz-table">
+      <thead><tr><th>Size</th><th>How many</th><th>Running total</th></tr></thead>
+      <tbody id="cbRows"></tbody>
+      <tfoot id="cbFoot"></tfoot>
+    </table>
+  </section>
+  <p class="pz-embed-bar"><a href="https://brainvsmath.com/puzzles/how-many-squares-on-a-chessboard/">How many squares are on a chessboard? · Brain vs Math</a></p>
+
+  <section class="seo-block pz-page-only">
+    <details class="card pz-reveal" open>
+      <summary>The answer: 204</summary>
+      <p>A square of 2 by 2 cells can start in 7 columns and 7 rows, so there are 7 × 7 = 49 of them. A 3 by 3 square fits 6 × 6 = 36 ways, a 4 by 4 square 25 ways, and so on until the single 8 by 8 square that is the whole board.</p>
+      <p>64 + 49 + 36 + 25 + 16 + 9 + 4 + 1 = <strong>204</strong>.</p>
+      <p>In general a square of size k fits (n − k + 1) times across and (n − k + 1) times down an n by n board, so the total is 1² + 2² + … + n², which is n(n + 1)(2n + 1) ÷ 6. For n = 8 that is 8 × 9 × 17 ÷ 6 = 204. A 10 by 10 board holds 385.</p>
+    </details>
+
+    <h2>A harder one: how many rectangles?</h2>
+    <p class="muted">Every rectangle on the board is fixed by two of the 9 vertical grid lines and two of the 9 horizontal ones. There are 36 ways to choose two lines from nine, so the board holds 36 × 36 = <strong>1,296 rectangles</strong>, and the 204 squares are among them.</p>
+
+    <h2>Watch it in under a minute</h2>
+    <div class="pz-video">
+      <div class="pz-video-box" data-yt="0d9EzYvHx7Q" data-title="Count Every Square on a Chessboard and You Get 204, Not 64">
+        <img src="../../assets/img/puzzles/how-many-squares-on-a-chessboard.jpg" alt="Video still: a chessboard with a 2 by 2 square highlighted" width="360" height="640" loading="lazy">
+        <button class="pz-play" type="button" aria-label="Play the video"><span class="tri" aria-hidden="true"></span>Play</button>
+      </div>
+      <div>
+        <p class="muted">The video plays from YouTube when you press play, and not before.</p>
+        <p><a class="btn primary" href="https://www.youtube.com/@brainversusmath?sub_confirmation=1" rel="noopener">Subscribe to Brain vs Math on YouTube</a></p>
+        <p class="muted">New visual proofs every day, each a question with a surprising count, length or shape.</p>
+      </div>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Why isn't the answer 64?</summary>
+        <p>64 counts only the single cells. Any block of cells that is as wide as it is tall is also a square, so the 2 by 2, 3 by 3 and larger blocks add 140 more.</p>
+      </details>
+      <details>
+        <summary>How many squares are on a 10 by 10 grid?</summary>
+        <p>10 × 11 × 21 ÷ 6 = 385. Pick the 10 by 10 board above to step through it.</p>
+      </details>
+      <details>
+        <summary>Do rectangles that are not squares count?</summary>
+        <p>Not in this puzzle. Counting every rectangle gives 1,296 on a chessboard.</p>
+      </details>
+    </div>
+
+    <h2>Use this puzzle in a class</h2>
+    <div class="pz-embed">
+      <p class="muted">Paste this code into a class page or a learning platform to show the counting board there. It is free to use for teaching, with the link back kept.</p>
+      <label class="pz-label" for="embedCode">Embed code</label>
+      <textarea id="embedCode" readonly data-name="How many squares are on a chessboard?" data-height="900"></textarea>
+      <button class="btn" id="embedCopy" type="button">Copy the code</button>
+    </div>
+
+    <h2>More puzzles</h2>
+    <div class="pz-list">
+      <a class="mini-card" href="../count-the-triangles/"><img src="../../assets/img/puzzles/count-the-triangles.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>How many triangles?</strong><br><span class="muted">A triangle cut into 16 holds 27.</span></span></a>
+      <a class="mini-card" href="../spider-and-fly-problem/"><img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>The spider and the fly</strong><br><span class="muted">The shortest path crosses five walls.</span></span></a>
+      <a class="mini-card" href="../"><span style="grid-column:1 / -1"><strong>All puzzles</strong></span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../../about/">About</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

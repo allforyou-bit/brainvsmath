@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Spider and the Fly Problem: Unfold the Room, the Answer Is 40 | Brain vs Math</title>
+<meta name="description" content="A room 30 long, 12 wide and 12 high: the obvious path from the spider to the fly is 42, but unfolding the walls finds a straight path of 40 across five faces. Try four unfoldings yourself.">
+<link rel="canonical" href="https://brainvsmath.com/puzzles/spider-and-fly-problem/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/img/icon-192.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<meta name="theme-color" content="#0b1220">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Brain vs Math">
+<meta property="og:title" content="The spider and the fly: the shortest path crosses five walls">
+<meta property="og:description" content="Unfold the room flat and the shortest path is a straight line of 40, not 42.">
+<meta property="og:url" content="https://brainvsmath.com/puzzles/spider-and-fly-problem/">
+<meta property="og:image" content="https://brainvsmath.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=JSON.parse(localStorage.getItem("bvm_theme"));if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}if(/[?&]embed=1(&|$)/.test(location.search))document.documentElement.classList.add("pz-embedded");</script>
+<link rel="stylesheet" href="../../assets/css/main.css">
+<link rel="stylesheet" href="../../assets/css/puzzles.css">
+<script src="../../config.js"></script>
+<script src="../../assets/js/core.js" defer></script>
+<script src="../../assets/js/puzzle-common.js" defer></script>
+<script src="../../assets/js/puzzle-spider.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Brain vs Math", "item": "https://brainvsmath.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Puzzles", "item": "https://brainvsmath.com/puzzles/" },
+        { "@type": "ListItem", "position": 3, "name": "The spider and the fly", "item": "https://brainvsmath.com/puzzles/spider-and-fly-problem/" }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Unfold a Room Flat and the Spider's Shortest Path to the Fly Crosses Five Walls",
+      "description": "The obvious route is 42. Unfold end wall, ceiling, side wall, floor and end wall flat and the straight path is 40, the long side of a 24-32-40 right triangle.",
+      "thumbnailUrl": "https://brainvsmath.com/assets/img/puzzles/spider-and-fly-problem.jpg",
+      "uploadDate": "2026-10-07T09:00:00-04:00",
+      "embedUrl": "https://www.youtube.com/embed/XNTGv8Ch66M"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="../../"><span class="b">Brain</span><span class="vs">VS</span><span class="m">Math</span></a>
+    <div class="nav-links">
+      <a href="../../">Daily</a>
+      <a href="../" aria-current="page">Puzzles</a>
+      <a href="../../sprint/">Sprint</a>
+      <a href="../../times-tables/">Times Tables</a>
+      <a href="../../worksheets/">Worksheets</a>
+      <a href="../../shop/">Printables</a>
+      <a href="../../blog/">Blog</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark / light theme">🌓</button>
+    </div>
+  </nav>
+</header>
+
+<main class="container narrow" style="margin-top:1.4rem">
+  <div class="kicker pz-page-only">Puzzle · shortest path</div>
+  <h1 class="pz-q">The spider and the fly: what is the shortest path?</h1>
+  <p class="pz-lede muted pz-page-only">A room is 30 long, 12 wide and 12 high. A spider sits on one end wall, on the centre line, 1 below the ceiling. A fly sits on the opposite end wall, on the centre line, 1 above the floor. The spider can only walk on the walls, ceiling and floor. What is the shortest way to the fly?</p>
+
+  <section class="card" aria-label="Unfold the room">
+    <div class="pz-stage"><svg id="spRoom" role="img" aria-label="The room"></svg></div>
+    <span class="pz-label" id="spRoutesLabel">Unfold the room this way</span>
+    <div class="pz-row" id="spRoutes" role="group" aria-labelledby="spRoutesLabel"></div>
+    <div class="pz-stage"><svg id="spNet" role="img" aria-label="The unfolded room"></svg></div>
+    <p class="pz-status" id="spCalc" aria-live="polite"></p>
+    <table class="pz-table">
+      <thead><tr><th>Unfolding</th><th>Straight path</th></tr></thead>
+      <tbody id="spRows"></tbody>
+    </table>
+    <label class="pz-label" for="spLen">Room length: <span id="spLenOut">30</span></label>
+    <input id="spLen" type="range" min="10" max="40" step="1" value="30" style="width:100%;min-height:44px">
+    <p class="muted" style="font-size:.85rem;margin:.2rem 0 0">The room stays 12 wide and 12 high. Watch which of the four unfoldings gives the shortest path as the room gets longer.</p>
+  </section>
+  <p class="pz-embed-bar"><a href="https://brainvsmath.com/puzzles/spider-and-fly-problem/">The spider and the fly · Brain vs Math</a></p>
+
+  <section class="seo-block pz-page-only">
+    <details class="card pz-reveal" open>
+      <summary>The answer: 40</summary>
+      <p>The obvious route goes up 1 to the ceiling, straight across 30, and down 11: 42. Going round a side wall instead is longer, about 43.17.</p>
+      <p>Now unfold the room so that the end wall, the ceiling, a side wall, the floor and the other end wall lie flat in a chain. On that flat sheet the spider and the fly are 32 apart one way and 24 apart the other, so the straight line between them is the long side of a 24-32-40 right triangle: <strong>40</strong>. Fold the walls back up and that line becomes a path that crosses five of the six faces, shorter than the obvious one.</p>
+      <p>This is a classic puzzle by Henry Dudeney. The trick works for any path on the surface of a box: on a flat unfolding the shortest route is a straight line, so the question becomes which unfolding brings the two points closest.</p>
+    </details>
+
+    <h2>Why a longer room changes the answer</h2>
+    <p class="muted">Move the room length above. Of these four unfoldings, the path over the ceiling is shortest while the room is shorter than 19.4. Between 19.4 and 24.2 the route over the ceiling and one side wall wins, and beyond 24.2 the five-face route wins. In a short room the detour across the walls costs more than it saves.</p>
+
+    <h2>Watch it in under a minute</h2>
+    <div class="pz-video">
+      <div class="pz-video-box" data-yt="XNTGv8Ch66M" data-title="Unfold a Room Flat and the Spider's Shortest Path to the Fly Crosses Five Walls">
+        <img src="../../assets/img/puzzles/spider-and-fly-problem.jpg" alt="Video still: the unfolded room with the straight path from the spider to the fly" width="360" height="640" loading="lazy">
+        <button class="pz-play" type="button" aria-label="Play the video"><span class="tri" aria-hidden="true"></span>Play</button>
+      </div>
+      <div>
+        <p class="muted">The video plays from YouTube when you press play, and not before.</p>
+        <p><a class="btn primary" href="https://www.youtube.com/@brainversusmath?sub_confirmation=1" rel="noopener">Subscribe to Brain vs Math on YouTube</a></p>
+        <p class="muted">New visual proofs every day, each a question with a surprising count, length or shape.</p>
+      </div>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Why is the straight line on the unfolded room the shortest path?</summary>
+        <p>Folding and unfolding the walls does not stretch them, so a path keeps its length on the flat sheet. On a flat sheet the shortest way between two points is a straight line.</p>
+      </details>
+      <details>
+        <summary>Does the spider really cross five faces?</summary>
+        <p>Yes: its own end wall, the ceiling, a side wall, the floor and the far end wall. Only the other side wall is left out.</p>
+      </details>
+      <details>
+        <summary>Is 40 the shortest of all paths, or only of these four?</summary>
+        <p>For this room, 40 is the shortest path of all; it is the known answer to Dudeney's puzzle. The table compares four unfoldings, and for other room lengths it shows only which of those four is shortest.</p>
+      </details>
+    </div>
+
+    <h2>Use this puzzle in a class</h2>
+    <div class="pz-embed">
+      <p class="muted">Paste this code into a class page or a learning platform to show the unfolding tool there. It is free to use for teaching, with the link back kept.</p>
+      <label class="pz-label" for="embedCode">Embed code</label>
+      <textarea id="embedCode" readonly data-name="The spider and the fly" data-height="1000"></textarea>
+      <button class="btn" id="embedCopy" type="button">Copy the code</button>
+    </div>
+
+    <h2>More puzzles</h2>
+    <div class="pz-list">
+      <a class="mini-card" href="../how-many-squares-on-a-chessboard/"><img src="../../assets/img/puzzles/how-many-squares-on-a-chessboard.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>How many squares on a chessboard?</strong><br><span class="muted">Not 64, but 204.</span></span></a>
+      <a class="mini-card" href="../count-the-triangles/"><img src="../../assets/img/puzzles/count-the-triangles.jpg" alt="" width="72" height="128" loading="lazy"><span><strong>How many triangles?</strong><br><span class="muted">A triangle cut into 16 holds 27.</span></span></a>
+      <a class="mini-card" href="../"><span style="grid-column:1 / -1"><strong>All puzzles</strong></span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container cols">
+    <div>© <span id="year">2026</span> Brain vs Math — one puzzle a day keeps the brain in play.</div>
+    <nav>
+      <a href="../../about/">About</a>
+      <a href="../../privacy/">Privacy</a>
+      <a href="../../terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
